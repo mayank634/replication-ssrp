@@ -1,0 +1,2546 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Code\_replication.R},
+  pdfauthor={Home},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Code\_replication.R}
+\author{Home}
+\date{2023-04-16}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load Libraries {-}{-}{-}{-}}
+
+\FunctionTok{library}\NormalTok{(foreign)}
+\FunctionTok{library}\NormalTok{(car)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: carData
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(xtable)}
+\FunctionTok{library}\NormalTok{(sandwich)}
+\FunctionTok{library}\NormalTok{(lmtest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: zoo
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'zoo'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     as.Date, as.Date.numeric
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(exactRankTests)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  Package 'exactRankTests' is no longer under development.
+##  Please consider using package 'coin' instead.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(rms)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: Hmisc
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'Hmisc'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:xtable':
+## 
+##     label, label<-
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     format.pval, units
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'rms'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:lmtest':
+## 
+##     lrtest
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:car':
+## 
+##     Predict, vif
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(here)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## here() starts at X:/Repository/replication-ssrp
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Source and setting up the modified apsrtable {-}{-}{-}{-}}
+\FunctionTok{source}\NormalTok{(}\StringTok{"code}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{apsrtable\_new.R"}\NormalTok{)}
+\FunctionTok{environment}\NormalTok{(apsrtable\_new) }\OtherTok{\textless{}{-}} \FunctionTok{asNamespace}\NormalTok{(}\StringTok{\textquotesingle{}apsrtable\textquotesingle{}}\NormalTok{)}
+\FunctionTok{assignInNamespace}\NormalTok{(}\StringTok{"apsrtable"}\NormalTok{, apsrtable\_new, }\AttributeTok{ns =} \StringTok{"apsrtable"}\NormalTok{)}
+
+\CommentTok{\# Load Development Indicators Data}
+\FunctionTok{here}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "X:/Repository/replication-ssrp"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{load}\NormalTok{(}\StringTok{"data}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{devDTA.Rdata"}\NormalTok{)}
+\FunctionTok{names}\NormalTok{(devDTA)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "State_number_2001" "AC_no_2001"        "State_no_2001_old"
+##  [4] "AC_number_1976"    "State_name_1976"   "AC_name_1976"     
+##  [7] "AC_type_1976"      "PC_no_1976"        "PC_name_1976"     
+## [10] "PC_type_1976"      "State_name_2001"   "AC_name_2001"     
+## [13] "AC_type_2001"      "PC_no_2001"        "PC_name_2001"     
+## [16] "PC_type_2001"      "SC_pop71_true"     "tot_pop71_true"   
+## [19] "DELIM_district_no" "District_name"     "SC_percent71_true"
+## [22] "Pop_tot1971"       "SC_tot1971"        "ST_tot1971"       
+## [25] "Plit71"            "Plit71_SC"         "Plit71_nonSC"     
+## [28] "AC_type_noST"      "Pfemale"           "Prural"           
+## [31] "Plit"              "Pnonw"             "Pmain"            
+## [34] "Pmarg"             "Psc"               "Pst"              
+## [37] "Plit_SC"           "Pnonw_SC"          "Pmain_SC"         
+## [40] "Pmarg_SC"          "Plit_nonSC"        "Pnonw_nonSC"      
+## [43] "VD01_TotPop"       "P_ST71"            "Plit_gap"         
+## [46] "P_W71_SC"          "P_W71_nonSC"       "P_W71"            
+## [49] "P_W71_gap"         "P_W_SC"            "P_W_nonSC"        
+## [52] "P_W"               "P_W_gap"           "P_al71_SC"        
+## [55] "P_al71_nonSC"      "P_al_SC"           "P_al_nonSC"       
+## [58] "P_al"              "P_al_gap"          "Plit_7"           
+## [61] "Plit_SC_7"         "Plit_nonSC_7"      "Plit_7_gap"       
+## [64] "P_elecVD01"        "P_elecVD01_nonSC"  "P_elecVD01_sc"    
+## [67] "P_elecVD01_gap"    "P_educVD01"        "P_educVD01_nonSC" 
+## [70] "P_educVD01_sc"     "P_educVD01_gap"    "P_medicVD01"      
+## [73] "P_medicVD01_nonSC" "P_medicVD01_sc"    "P_medicVD01_gap"  
+## [76] "P_commVD01"        "P_commVD01_nonSC"  "P_commVD01_sc"    
+## [79] "P_commVD01_gap"    "P_SC_VD01"         "Plit_71gap"       
+## [82] "P_al_71gap"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# SUMMARY STATS {-}{-}{-}{-}}
+
+
+\DocumentationTok{\#\# Sample size including ST constituencies {-}{-}{-}{-}}
+\FunctionTok{table}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_1976)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  GEN   SC   ST 
+## 2409  483  242
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Sample size Census PCA variables without ST constituencies {-}{-}{-}{-}}
+\FunctionTok{table}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  GEN   SC 
+## 2409  483
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Sample size for Village Directory variables without ST constituencies {-}{-}{-}{-}}
+\FunctionTok{table}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST[}\FunctionTok{complete.cases}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{P\_elecVD01)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  GEN   SC 
+## 2356  478
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Creating clustered SEs {-}{-}{-}{-}}
+\NormalTok{clusterSE}\OtherTok{\textless{}{-}}\ControlFlowTok{function}\NormalTok{(model, data, cluster)\{}
+\FunctionTok{require}\NormalTok{(sandwich, }\AttributeTok{quietly =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{require}\NormalTok{(lmtest, }\AttributeTok{quietly =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{cluster}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(data[}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{row.names}\NormalTok{(}\FunctionTok{model.matrix}\NormalTok{(model))),cluster]))}
+\NormalTok{M }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(}\FunctionTok{unique}\NormalTok{(cluster))}
+\NormalTok{N }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(cluster)}
+\NormalTok{K }\OtherTok{\textless{}{-}}\NormalTok{ model}\SpecialCharTok{$}\NormalTok{rank}
+\NormalTok{dfc }\OtherTok{\textless{}{-}}\NormalTok{ (M}\SpecialCharTok{/}\NormalTok{(M}\DecValTok{{-}1}\NormalTok{))}\SpecialCharTok{*}\NormalTok{((N}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{/}\NormalTok{(N}\SpecialCharTok{{-}}\NormalTok{K))}
+\NormalTok{u.clust}\OtherTok{\textless{}{-}}\FunctionTok{apply}\NormalTok{(}\FunctionTok{estfun}\NormalTok{(model),}\DecValTok{2}\NormalTok{, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{tapply}\NormalTok{(x, cluster, sum))}
+\NormalTok{cl.vcov}\OtherTok{\textless{}{-}}\NormalTok{ dfc}\SpecialCharTok{*}\FunctionTok{sandwich}\NormalTok{(model, }\AttributeTok{meat=}\FunctionTok{crossprod}\NormalTok{(u.clust)}\SpecialCharTok{/}\NormalTok{N)}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{coeftest}\NormalTok{(model, cl.vcov))}
+\FunctionTok{return}\NormalTok{(cl.vcov)}
+\NormalTok{\}}
+
+
+\DocumentationTok{\#\# Outcome variables {-}{-}{-}{-}}
+
+\NormalTok{outcomeindex}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{35}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{52}\NormalTok{, }\DecValTok{58}\NormalTok{, }\DecValTok{64}\NormalTok{, }\DecValTok{68}\NormalTok{, }\DecValTok{72}\NormalTok{, }\DecValTok{76}\NormalTok{, }\DecValTok{63}\NormalTok{, }\DecValTok{53}\NormalTok{, }\DecValTok{59}\NormalTok{, }\DecValTok{67}\NormalTok{, }\DecValTok{71}\NormalTok{, }\DecValTok{75}\NormalTok{, }\DecValTok{79}\NormalTok{)}
+
+\DocumentationTok{\#\# Values for Table 1 }
+
+\DocumentationTok{\#\#Remove \# from lines with alternative SE specification to check robustness to other SEs.}
+\NormalTok{mymatrix}\OtherTok{\textless{}{-}}\FunctionTok{matrix}\NormalTok{(}\AttributeTok{nrow=}\FunctionTok{length}\NormalTok{(outcomeindex), }\AttributeTok{ncol=}\DecValTok{4}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(outcomeindex))\{}
+\NormalTok{devDTAer}\OtherTok{\textless{}{-}}\NormalTok{devDTA[}\FunctionTok{complete.cases}\NormalTok{(devDTA[,outcomeindex[i]], devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST),]}
+
+\NormalTok{mymatrix[i,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(}\FunctionTok{tapply}\NormalTok{(devDTAer[, outcomeindex[i]], devDTAer}\SpecialCharTok{$}\NormalTok{AC\_type\_noST, mean, }\AttributeTok{na.rm=}\NormalTok{T),}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{myOLS}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(devDTAer[, outcomeindex[i]]}\SpecialCharTok{\textasciitilde{}}\NormalTok{ devDTAer}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)}
+
+\NormalTok{mymatrix[i,}\FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{)]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(myOLS}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{],}\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\#SEs clustered at state level }
+\NormalTok{mySE}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(myOLS, }\AttributeTok{data=}\NormalTok{devDTAer, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+\NormalTok{mymatrix[i,}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{)]}\OtherTok{\textless{}{-}}\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{coeftest}\NormalTok{(myOLS, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{]}\SpecialCharTok{\textless{}}\FloatTok{0.01}\NormalTok{, }\StringTok{"\textless{}0.01"}\NormalTok{,  }\FunctionTok{round}\NormalTok{(}\FunctionTok{coeftest}\NormalTok{(myOLS, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{],}\DecValTok{2}\NormalTok{))}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value  Pr(>|t|)    
+## (Intercept)              16.7012     1.1545 14.4661 < 2.2e-16 ***
+## devDTAer$AC_type_noSTSC   7.7010     1.1232  6.8565 8.592e-12 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)              65.1833     2.8807 22.6274  < 2e-16 ***
+## devDTAer$AC_type_noSTSC  -2.3761     1.1307 -2.1014  0.03569 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)             40.10746    1.64925 24.3186   <2e-16 ***
+## devDTAer$AC_type_noSTSC  0.15319    0.51427  0.2979   0.7658    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)             11.42410    1.22812  9.3021  < 2e-16 ***
+## devDTAer$AC_type_noSTSC  0.71104    0.42570  1.6703  0.09497 .  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)              90.4168     4.9367 18.3152  < 2e-16 ***
+## devDTAer$AC_type_noSTSC  -2.6242     1.1790 -2.2258  0.02611 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)             95.25696    1.30734 72.8630  < 2e-16 ***
+## devDTAer$AC_type_noSTSC -1.13863    0.47229 -2.4108  0.01598 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)              62.3907     5.5430 11.2559  < 2e-16 ***
+## devDTAer$AC_type_noSTSC  -3.1864     1.6148 -1.9732  0.04857 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)              74.3920     5.0319 14.7840  < 2e-16 ***
+## devDTAer$AC_type_noSTSC  -3.2816     1.4289 -2.2966  0.02171 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                          Estimate Std. Error t value  Pr(>|t|)    
+## (Intercept)             -10.72383    1.49050 -7.1948 7.937e-13 ***
+## devDTAer$AC_type_noSTSC  -1.92326    0.57807 -3.3270 0.0008888 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)   
+## (Intercept)              2.08154    0.70591  2.9488 0.003216 **
+## devDTAer$AC_type_noSTSC  0.57145    0.32447  1.7612 0.078311 . 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value  Pr(>|t|)    
+## (Intercept)              9.85247    1.27795  7.7096 1.723e-14 ***
+## devDTAer$AC_type_noSTSC  1.30351    0.46118  2.8265  0.004739 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)
+## (Intercept)              0.25230    0.15421  1.6361   0.1019
+## devDTAer$AC_type_noSTSC -0.22281    0.20173 -1.1045   0.2695
+## 
+## 
+## t test of coefficients:
+## 
+##                          Estimate Std. Error t value Pr(>|t|)
+## (Intercept)              0.188215   0.213322  0.8823   0.3777
+## devDTAer$AC_type_noSTSC -0.073892   0.099620 -0.7417   0.4583
+## 
+## 
+## t test of coefficients:
+## 
+##                         Estimate Std. Error t value Pr(>|t|)   
+## (Intercept)             -0.22713    0.43391 -0.5234 0.600707   
+## devDTAer$AC_type_noSTSC -0.87123    0.30706 -2.8374 0.004581 **
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                          Estimate Std. Error t value Pr(>|t|)   
+## (Intercept)              0.047432   0.474747  0.0999 0.920422   
+## devDTAer$AC_type_noSTSC -0.833399   0.295095 -2.8242 0.004773 **
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{row.names}\NormalTok{(mymatrix)}\OtherTok{\textless{}{-}}\FunctionTok{names}\NormalTok{(devDTA[outcomeindex])}
+\FunctionTok{colnames}\NormalTok{(mymatrix)}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"Mean general"}\NormalTok{, }\StringTok{"Mean reserved"}\NormalTok{, }\StringTok{"Difference"}\NormalTok{, }\StringTok{"P{-}value"}\NormalTok{)}
+
+\FunctionTok{row.names}\NormalTok{(mymatrix)}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"Percentage of SCs"}\NormalTok{, }\StringTok{"Literacy rate"}\NormalTok{, }\StringTok{" Employment Rate"}\NormalTok{, }\StringTok{"Agricultural laborers"}\NormalTok{, }\StringTok{"Electricity in village"}\NormalTok{, }\StringTok{"School in village "}\NormalTok{,}\StringTok{"Medical facility in village"}\NormalTok{,}\StringTok{"Comm. channel in village"}\NormalTok{,}
+\StringTok{"Literacy gap"}\NormalTok{, }\StringTok{" Employment gap"}\NormalTok{, }\StringTok{"Agricultural laborers gap"}\NormalTok{,   }\StringTok{"Electricity in village gap"}\NormalTok{, }\StringTok{"School in village gap"}\NormalTok{,}\StringTok{"Medical facility in village gap"}\NormalTok{,}\StringTok{"Comm. channel in village gap"}\NormalTok{)}
+
+\FunctionTok{library}\NormalTok{(xtable)}
+\FunctionTok{xtable}\NormalTok{(mymatrix, }\AttributeTok{align=}\FunctionTok{c}\NormalTok{(}\StringTok{"l"}\NormalTok{, }\StringTok{"r"}\NormalTok{, }\StringTok{"r"}\NormalTok{, }\StringTok{"r"}\NormalTok{, }\StringTok{"r"}\NormalTok{), }\AttributeTok{caption=}\StringTok{"Difference in general and SC{-}reserved constituencies in 2001"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## % latex table generated in R 4.2.3 by xtable 1.8-4 package
+## % Sun Apr 16 23:38:23 2023
+## \begin{table}[ht]
+## \centering
+## \begin{tabular}{lrrrr}
+##   \hline
+##  & Mean general & Mean reserved & Difference & P-value \\ 
+##   \hline
+## Percentage of SCs & 16.7 & 24.4 & 7.7 & $<$0.01 \\ 
+##   Literacy rate & 65.2 & 62.8 & -2.4 & 0.04 \\ 
+##    Employment Rate & 40.1 & 40.3 & 0.2 & 0.77 \\ 
+##   Agricultural laborers & 11.4 & 12.1 & 0.7 & 0.09 \\ 
+##   Electricity in village & 90.4 & 87.8 & -2.6 & 0.03 \\ 
+##   School in village  & 95.3 & 94.1 & -1.1 & 0.02 \\ 
+##   Medical facility in village & 62.4 & 59.2 & -3.2 & 0.05 \\ 
+##   Comm. channel in village & 74.4 & 71.1 & -3.3 & 0.02 \\ 
+##   Literacy gap & -10.7 & -12.6 & -1.9 & $<$0.01 \\ 
+##    Employment gap & 2.1 & 2.7 & 0.6 & 0.08 \\ 
+##   Agricultural laborers gap & 9.9 & 11.2 & 1.3 & $<$0.01 \\ 
+##   Electricity in village gap & 0.3 & 0 & -0.2 & 0.27 \\ 
+##   School in village gap & 0.2 & 0.1 & -0.1 & 0.46 \\ 
+##   Medical facility in village gap & -0.2 & -1.1 & -0.9 & $<$0.01 \\ 
+##   Comm. channel in village gap & 0 & -0.8 & -0.8 & $<$0.01 \\ 
+##    \hline
+## \end{tabular}
+## \caption{Difference in general and SC-reserved constituencies in 2001} 
+## \end{table}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# ILLUSTRATION OF EDUC CHANGE {-}{-}{-}{-}}
+
+\DocumentationTok{\#\# EDUCATION CHANGE {-}{-}{-}{-}}
+\FunctionTok{attach}\NormalTok{(devDTA)}
+
+\NormalTok{myplot\_gen}\OtherTok{\textless{}{-}}\FunctionTok{rbind}\NormalTok{(}\FunctionTok{mean}\NormalTok{(Plit71\_nonSC[AC\_type\_noST}\SpecialCharTok{==}\StringTok{"GEN"}\NormalTok{], }\AttributeTok{na.rm=}\NormalTok{T), }\FunctionTok{mean}\NormalTok{(Plit\_nonSC\_7[AC\_type\_noST}\SpecialCharTok{==}\StringTok{"GEN"}\NormalTok{], }\AttributeTok{na.rm=}\NormalTok{T))}
+\NormalTok{myplot\_sc}\OtherTok{\textless{}{-}}\FunctionTok{rbind}\NormalTok{(}\FunctionTok{mean}\NormalTok{(Plit71\_nonSC[AC\_type\_noST}\SpecialCharTok{==}\StringTok{"SC"}\NormalTok{], }\AttributeTok{na.rm=}\NormalTok{T), }\FunctionTok{mean}\NormalTok{(Plit\_nonSC\_7[AC\_type\_noST}\SpecialCharTok{==}\StringTok{"SC"}\NormalTok{], }\AttributeTok{na.rm=}\NormalTok{T))}
+\NormalTok{myplot2\_gen}\OtherTok{\textless{}{-}}\FunctionTok{rbind}\NormalTok{(}\FunctionTok{mean}\NormalTok{(Plit71\_SC[AC\_type\_noST}\SpecialCharTok{==}\StringTok{"GEN"}\NormalTok{], }\AttributeTok{na.rm=}\NormalTok{T), }\FunctionTok{mean}\NormalTok{(Plit\_SC\_7[AC\_type\_noST}\SpecialCharTok{==}\StringTok{"GEN"}\NormalTok{], }\AttributeTok{na.rm=}\NormalTok{T))}
+\NormalTok{myplot2\_sc}\OtherTok{\textless{}{-}}\FunctionTok{rbind}\NormalTok{(}\FunctionTok{mean}\NormalTok{(Plit71\_SC[AC\_type\_noST}\SpecialCharTok{==}\StringTok{"SC"}\NormalTok{], }\AttributeTok{na.rm=}\NormalTok{T), }\FunctionTok{mean}\NormalTok{(Plit\_SC\_7[AC\_type\_noST}\SpecialCharTok{==}\StringTok{"SC"}\NormalTok{], }\AttributeTok{na.rm=}\NormalTok{T))}
+
+\FunctionTok{pdf}\NormalTok{(}\AttributeTok{file=}\StringTok{"Figures/Fig\_educ\_change.pdf"}\NormalTok{, }\AttributeTok{height =} \DecValTok{4}\NormalTok{, }\AttributeTok{width=}\DecValTok{8}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+
+\FunctionTok{plot}\NormalTok{(myplot\_gen, }\AttributeTok{type=}\StringTok{"l"}\NormalTok{, }\AttributeTok{lty=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\StringTok{"\#00688B"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Percentage"}\NormalTok{, }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{70}\NormalTok{), }\AttributeTok{xaxt=}\StringTok{"n"}\NormalTok{, }\AttributeTok{main=}\StringTok{"Non{-}SC population"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"Year"}\NormalTok{, }\AttributeTok{las=}\DecValTok{1}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(myplot\_sc, }\AttributeTok{col=}\StringTok{"\#FF1493"}\NormalTok{)}
+\FunctionTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{at=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{labels=}\FunctionTok{c}\NormalTok{(}\StringTok{"1971"}\NormalTok{, }\StringTok{"2001"}\NormalTok{))}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"bottomright"}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"General (N="}\NormalTok{, }\FunctionTok{summary}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)[}\DecValTok{1}\NormalTok{], }\StringTok{")"}\NormalTok{, }\AttributeTok{sep=}\StringTok{""}\NormalTok{), }\FunctionTok{paste}\NormalTok{(}\StringTok{"Reserved (N="}\NormalTok{, }\FunctionTok{summary}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)[}\DecValTok{2}\NormalTok{], }\StringTok{")"}\NormalTok{, }\AttributeTok{sep=}\StringTok{""}\NormalTok{)), }\AttributeTok{lty=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"\#00688B"}\NormalTok{, }\StringTok{"\#FF1493"}\NormalTok{), }\AttributeTok{cex=}\NormalTok{.}\DecValTok{8}\NormalTok{)}
+
+\CommentTok{\#Adding line and text for general line}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\NormalTok{myplot\_gen[}\DecValTok{2}\NormalTok{], }\AttributeTok{lty=}\DecValTok{3}\NormalTok{, }\AttributeTok{col=}\StringTok{"\#00688B"}\NormalTok{)}
+\FunctionTok{arrows}\NormalTok{(}\AttributeTok{x0=}\FloatTok{1.02}\NormalTok{, }\AttributeTok{y0=}\NormalTok{myplot\_gen[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\DecValTok{2}\NormalTok{, }\AttributeTok{x1=}\FloatTok{1.02}\NormalTok{, }\AttributeTok{y1=}\NormalTok{myplot\_gen[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\AttributeTok{code=}\DecValTok{3}\NormalTok{, }\AttributeTok{length=}\NormalTok{.}\DecValTok{05}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\AttributeTok{x=}\FloatTok{1.02}\NormalTok{, }\AttributeTok{y=}\NormalTok{myplot\_gen[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{,  }\AttributeTok{labels=}\FunctionTok{paste}\NormalTok{(}\StringTok{"Change}\SpecialCharTok{\textbackslash{}n}\StringTok{general:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\FunctionTok{round}\NormalTok{(myplot\_gen[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{myplot\_gen[}\DecValTok{1}\NormalTok{],}\DecValTok{2}\NormalTok{), }\AttributeTok{sep=}\StringTok{""}\NormalTok{), }\AttributeTok{pos=}\DecValTok{4}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.8}\NormalTok{, }\AttributeTok{col =} \StringTok{"black"}\NormalTok{)}
+
+\CommentTok{\#Adding line and text for reserved line}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\NormalTok{myplot\_sc[}\DecValTok{1}\NormalTok{], }\AttributeTok{lty=}\DecValTok{3}\NormalTok{, }\AttributeTok{col=}\StringTok{"\#FF1493"}\NormalTok{)}
+\FunctionTok{arrows}\NormalTok{(}\AttributeTok{x0=}\FloatTok{1.98}\NormalTok{, }\AttributeTok{y0=}\NormalTok{myplot\_sc[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\DecValTok{2}\NormalTok{, }\AttributeTok{x1=}\FloatTok{1.98}\NormalTok{, }\AttributeTok{y1=}\NormalTok{myplot\_sc[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\AttributeTok{code=}\DecValTok{3}\NormalTok{, }\AttributeTok{length=}\NormalTok{.}\DecValTok{05}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\AttributeTok{x=}\FloatTok{1.98}\NormalTok{, }\AttributeTok{y=}\NormalTok{myplot\_sc[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\DecValTok{5}\NormalTok{,  }\AttributeTok{labels=}\FunctionTok{paste}\NormalTok{(}\StringTok{"Change}\SpecialCharTok{\textbackslash{}n}\StringTok{reserved:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\FunctionTok{round}\NormalTok{(myplot\_sc[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{myplot\_sc[}\DecValTok{1}\NormalTok{],}\DecValTok{2}\NormalTok{), }\AttributeTok{sep=}\StringTok{""}\NormalTok{), }\AttributeTok{pos=}\DecValTok{2}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.8}\NormalTok{, }\AttributeTok{col =} \StringTok{"black"}\NormalTok{)}
+
+\FunctionTok{plot}\NormalTok{(myplot2\_gen, }\AttributeTok{type=}\StringTok{"l"}\NormalTok{, }\AttributeTok{lty=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\StringTok{"\#00688B"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Percentage"}\NormalTok{, }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{70}\NormalTok{), }\AttributeTok{xaxt=}\StringTok{"n"}\NormalTok{, }\AttributeTok{main=}\StringTok{"SC population"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"Year"}\NormalTok{, }\AttributeTok{las=}\DecValTok{1}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(myplot2\_sc, }\AttributeTok{col=}\StringTok{"\#FF1493"}\NormalTok{)}
+\FunctionTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{at=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{labels=}\FunctionTok{c}\NormalTok{(}\StringTok{"1971"}\NormalTok{, }\StringTok{"2001"}\NormalTok{))}
+
+\CommentTok{\#Adding line and text for general line}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\NormalTok{myplot2\_gen[}\DecValTok{2}\NormalTok{], }\AttributeTok{lty=}\DecValTok{3}\NormalTok{, }\AttributeTok{col=}\StringTok{"\#00688B"}\NormalTok{)}
+\FunctionTok{arrows}\NormalTok{(}\AttributeTok{x0=}\FloatTok{1.02}\NormalTok{, }\AttributeTok{y0=}\NormalTok{myplot2\_gen[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\DecValTok{2}\NormalTok{, }\AttributeTok{x1=}\FloatTok{1.02}\NormalTok{, }\AttributeTok{y1=}\NormalTok{myplot2\_gen[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\AttributeTok{code=}\DecValTok{3}\NormalTok{, }\AttributeTok{length=}\NormalTok{.}\DecValTok{05}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\AttributeTok{x=}\FloatTok{1.02}\NormalTok{, }\AttributeTok{y=}\NormalTok{myplot2\_gen[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{,  }\AttributeTok{labels=}\FunctionTok{paste}\NormalTok{(}\StringTok{"Change}\SpecialCharTok{\textbackslash{}n}\StringTok{general:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\FunctionTok{round}\NormalTok{(myplot2\_gen[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{myplot2\_gen[}\DecValTok{1}\NormalTok{],}\DecValTok{2}\NormalTok{), }\AttributeTok{sep=}\StringTok{""}\NormalTok{), }\AttributeTok{pos=}\DecValTok{4}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.8}\NormalTok{, }\AttributeTok{col =} \StringTok{"black"}\NormalTok{)}
+
+\CommentTok{\#Adding line and text for reserved line}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\NormalTok{myplot2\_sc[}\DecValTok{1}\NormalTok{], }\AttributeTok{lty=}\DecValTok{3}\NormalTok{, }\AttributeTok{col=}\StringTok{"\#FF1493"}\NormalTok{)}
+\FunctionTok{arrows}\NormalTok{(}\AttributeTok{x0=}\FloatTok{1.98}\NormalTok{, }\AttributeTok{y0=}\NormalTok{myplot2\_sc[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\DecValTok{2}\NormalTok{, }\AttributeTok{x1=}\FloatTok{1.98}\NormalTok{, }\AttributeTok{y1=}\NormalTok{myplot2\_sc[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\AttributeTok{code=}\DecValTok{3}\NormalTok{, }\AttributeTok{length=}\NormalTok{.}\DecValTok{05}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\AttributeTok{x=}\FloatTok{1.98}\NormalTok{, }\AttributeTok{y=}\NormalTok{myplot2\_sc[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\DecValTok{5}\NormalTok{,  }\AttributeTok{labels=}\FunctionTok{paste}\NormalTok{(}\StringTok{"Change}\SpecialCharTok{\textbackslash{}n}\StringTok{reserved:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\FunctionTok{round}\NormalTok{(myplot2\_sc[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{myplot2\_sc[}\DecValTok{1}\NormalTok{],}\DecValTok{2}\NormalTok{)), }\AttributeTok{pos=}\DecValTok{2}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.8}\NormalTok{, }\AttributeTok{col =} \StringTok{"black"}\NormalTok{)}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\CommentTok{\# MATCHING MODELS {-}{-}{-}{-}}
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{) \{}
+
+\FunctionTok{detach}\NormalTok{()}
+
+\NormalTok{matchdta}\OtherTok{\textless{}{-}}\NormalTok{devDTA[}\FunctionTok{complete.cases}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true, devDTA}\SpecialCharTok{$}\NormalTok{State\_no\_2001\_old, devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST, devDTA}\SpecialCharTok{$}\NormalTok{Plit71\_SC, devDTA}\SpecialCharTok{$}\NormalTok{Plit\_SC),] }
+
+\NormalTok{matchdta}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true}\OtherTok{\textless{}{-}}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(matchdta}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true))}
+
+\FunctionTok{detach}\NormalTok{()}
+\FunctionTok{attach}\NormalTok{(matchdta)}
+\FunctionTok{dim}\NormalTok{(matchdta)}
+\FunctionTok{names}\NormalTok{(matchdta)}
+\NormalTok{Tr}\OtherTok{\textless{}{-}}\FunctionTok{ifelse}\NormalTok{(AC\_type\_noST}\SpecialCharTok{==}\StringTok{"SC"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+
+\NormalTok{X}\OtherTok{\textless{}{-}}\FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(}\FunctionTok{as.numeric}\NormalTok{(State\_no\_2001\_old), }\FunctionTok{as.numeric}\NormalTok{(DELIM\_district\_no), }\FunctionTok{as.numeric}\NormalTok{(PC\_no\_1976), SC\_percent71\_true))}
+
+\FunctionTok{library}\NormalTok{(Matching)}
+
+\ControlFlowTok{if}\NormalTok{ (i}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) \{}
+\NormalTok{Matched\_norep}\OtherTok{\textless{}{-}}\FunctionTok{Match}\NormalTok{(}\AttributeTok{Y=}\NormalTok{Plit, }\AttributeTok{Tr=}\NormalTok{Tr, }\AttributeTok{X=}\NormalTok{X, }\AttributeTok{estimand=}\StringTok{"ATT"}\NormalTok{, }\AttributeTok{exact=}\FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{), }\AttributeTok{replace=}\ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (i}\SpecialCharTok{==}\DecValTok{2}\NormalTok{) \{}
+\NormalTok{Matched\_norep}\OtherTok{\textless{}{-}}\FunctionTok{Match}\NormalTok{(}\AttributeTok{Y=}\NormalTok{Plit, }\AttributeTok{Tr=}\NormalTok{Tr, }\AttributeTok{X=}\NormalTok{X, }\AttributeTok{estimand=}\StringTok{"ATT"}\NormalTok{, }\AttributeTok{exact=}\FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{), }\AttributeTok{replace=}\ConstantTok{FALSE}\NormalTok{, }\AttributeTok{caliper=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,.}\DecValTok{5}\NormalTok{))}
+\NormalTok{\}}
+
+\FunctionTok{summary}\NormalTok{(Matched\_norep)}
+
+\DocumentationTok{\#\# Reporting balance {-}{-}{-}{-}}
+
+\ControlFlowTok{if}\NormalTok{ (i}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) \{}
+\NormalTok{bal\_SC\_norep1}\OtherTok{\textless{}{-}}\FunctionTok{MatchBalance}\NormalTok{(Tr}\SpecialCharTok{\textasciitilde{}}\NormalTok{SC\_percent71\_true, }\AttributeTok{match.out=}\NormalTok{Matched\_norep, }\AttributeTok{nboots=}\DecValTok{1000}\NormalTok{, }\AttributeTok{data=}\NormalTok{matchdta)}
+\NormalTok{\} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (i}\SpecialCharTok{==}\DecValTok{2}\NormalTok{) \{}
+\NormalTok{bal\_SC\_norep2}\OtherTok{\textless{}{-}}\FunctionTok{MatchBalance}\NormalTok{(Tr}\SpecialCharTok{\textasciitilde{}}\NormalTok{SC\_percent71\_true, }\AttributeTok{match.out=}\NormalTok{Matched\_norep, }\AttributeTok{nboots=}\DecValTok{1000}\NormalTok{, }\AttributeTok{data=}\NormalTok{matchdta)}
+\NormalTok{\}   }
+
+\NormalTok{bal.out\_norep}\OtherTok{\textless{}{-}}\FunctionTok{MatchBalance}\NormalTok{(Tr}\SpecialCharTok{\textasciitilde{}}\NormalTok{Pop\_tot1971}\SpecialCharTok{+}\NormalTok{ P\_ST71 }\SpecialCharTok{+}\NormalTok{Plit71\_nonSC}\SpecialCharTok{+}\NormalTok{Plit71\_SC}\SpecialCharTok{+}\NormalTok{ P\_W71\_nonSC }\SpecialCharTok{+}\NormalTok{ P\_W71\_SC }\SpecialCharTok{+}\NormalTok{P\_al71\_nonSC}\SpecialCharTok{+}\NormalTok{P\_al71\_SC, }\AttributeTok{match.out=}\NormalTok{Matched\_norep, }\AttributeTok{nboots=}\DecValTok{1000}\NormalTok{, }\AttributeTok{data=}\NormalTok{matchdta)}
+
+\NormalTok{covariates}\OtherTok{\textless{}{-}}\FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(Pop\_tot1971, P\_ST71, Plit71\_nonSC, Plit71\_SC, P\_W71\_nonSC , P\_W71\_SC, P\_al71\_nonSC, P\_al71\_SC))}
+
+\FunctionTok{names}\NormalTok{(covariates)}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"Population size"}\NormalTok{, }\StringTok{"Percentage of STs"}\NormalTok{, }\StringTok{"Literacy rate (non{-}SCs)"}\NormalTok{, }\StringTok{"Literacy rate (SCs)"}\NormalTok{, }\StringTok{"Employment (non{-}SCs)"}\NormalTok{, }\StringTok{"Employment (SCs)"}\NormalTok{, }\StringTok{"Agricultural laborers (non{-}SCs)"}\NormalTok{, }\StringTok{"Agricultural laborers (SCs)"}\NormalTok{)}
+
+\NormalTok{balanceTable }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(covariates, bal.out)\{}
+
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{begin\{table\}[ht] }\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{caption\{Difference in means for treated and control and Balance output from matches\} }\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{" }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{begin\{tabular\}\{lrrcrr\} }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{hline }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{hline }\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"Covariate    \&}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{multicolumn\{2\}\{c\}\{Before matching\}"}\NormalTok{,}
+    \StringTok{"\&\&}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{multicolumn\{2\}\{c\}\{After matching\}"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{cline\{2{-}3\} }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{cline\{5{-}6\} }\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{,}
+    \AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"\& }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{emph\{t p\}{-}value \&KS }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{emph\{p\}{-}value \&\&"}\NormalTok{,}
+    \StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{emph\{t p\}{-}value \&KS }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{emph\{p\}{-}value"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{,}
+    \AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+\NormalTok{  z }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{dim}\NormalTok{(covariates)[}\DecValTok{2}\NormalTok{], }\ControlFlowTok{function}\NormalTok{(x)\{}
+    \FunctionTok{cat}\NormalTok{(}\FunctionTok{names}\NormalTok{(covariates)[x], }\StringTok{"\&"}\NormalTok{,}
+    \FunctionTok{round}\NormalTok{(bal.out}\SpecialCharTok{$}\NormalTok{BeforeMatching[[x]]}\SpecialCharTok{$}\NormalTok{tt}\SpecialCharTok{$}\NormalTok{p.value,}\DecValTok{2}\NormalTok{), }\StringTok{"\&"}\NormalTok{,}
+    \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.null}\NormalTok{(bal.out}\SpecialCharTok{$}\NormalTok{BeforeMatching[[x]]}\SpecialCharTok{$}\NormalTok{ks}\SpecialCharTok{$}\NormalTok{ks.boot.pvalue) }\SpecialCharTok{==} \DecValTok{0}\NormalTok{,}
+      \FunctionTok{round}\NormalTok{(bal.out}\SpecialCharTok{$}\NormalTok{BeforeMatching[[x]]}\SpecialCharTok{$}\NormalTok{ks}\SpecialCharTok{$}\NormalTok{ks.boot.pvalue,}\DecValTok{2}\NormalTok{), }\StringTok{"{-}{-}{-}"}\NormalTok{), }\StringTok{"\&\&"}\NormalTok{,}
+    \FunctionTok{round}\NormalTok{(bal.out}\SpecialCharTok{$}\NormalTok{AfterMatching[[x]]}\SpecialCharTok{$}\NormalTok{tt}\SpecialCharTok{$}\NormalTok{p.value,}\DecValTok{2}\NormalTok{), }\StringTok{"\&"}\NormalTok{,}
+    \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.null}\NormalTok{(bal.out}\SpecialCharTok{$}\NormalTok{AfterMatching[[x]]}\SpecialCharTok{$}\NormalTok{ks}\SpecialCharTok{$}\NormalTok{ks.boot.pvalue) }\SpecialCharTok{==} \DecValTok{0}\NormalTok{,}
+      \FunctionTok{round}\NormalTok{(bal.out}\SpecialCharTok{$}\NormalTok{AfterMatching[[x]]}\SpecialCharTok{$}\NormalTok{ks}\SpecialCharTok{$}\NormalTok{ks.boot.pvalue,}\DecValTok{2}\NormalTok{), }\StringTok{"{-}{-}{-}"}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{,}
+      \AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+\NormalTok{  \})}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{end\{tabular\} }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{end\{table\} }\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{  \}}
+
+\FunctionTok{balanceTable}\NormalTok{(covariates, bal.out\_norep)}
+
+\DocumentationTok{\#\#output}
+\NormalTok{treatedDTA}\OtherTok{\textless{}{-}}\NormalTok{matchdta[Matched\_norep}\SpecialCharTok{$}\NormalTok{index.treated,]}
+\NormalTok{controlDTA}\OtherTok{\textless{}{-}}\NormalTok{matchdta[Matched\_norep}\SpecialCharTok{$}\NormalTok{index.control,]}
+\NormalTok{treatedDTA}\SpecialCharTok{$}\NormalTok{index.match}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{dim}\NormalTok{(treatedDTA)[}\DecValTok{1}\NormalTok{])}
+\NormalTok{controlDTA}\SpecialCharTok{$}\NormalTok{index.match}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{dim}\NormalTok{(controlDTA)[}\DecValTok{1}\NormalTok{])}
+
+\ControlFlowTok{if}\NormalTok{(i}\SpecialCharTok{==}\DecValTok{1}\NormalTok{)\{}
+\NormalTok{matched1}\OtherTok{\textless{}{-}}\FunctionTok{rbind}\NormalTok{(treatedDTA, controlDTA) }
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{matched2}\OtherTok{\textless{}{-}}\FunctionTok{rbind}\NormalTok{(treatedDTA, controlDTA)     }
+\NormalTok{\}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: MASS
+\end{verbatim}
+
+\begin{verbatim}
+## ## 
+## ##  Matching (Version 4.10-8, Build Date: 2022-11-03)
+## ##  See http://sekhon.berkeley.edu/matching for additional documentation.
+## ##  Please cite software as:
+## ##   Jasjeet S. Sekhon. 2011. ``Multivariate and Propensity Score Matching
+## ##   Software with Automated Balance Optimization: The Matching package for R.''
+## ##   Journal of Statistical Software, 42(7): 1-52. 
+## ##
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Estimate...  -0.18633 
+## SE.........  0.29715 
+## T-stat.....  -0.62707 
+## p.val......  0.53061 
+## 
+## Original number of observations..............  2892 
+## Original number of treated obs...............  483 
+## Matched number of observations...............  448 
+## Matched number of observations  (unweighted).  448 
+## 
+## Number of obs dropped by 'exact' or 'caliper'  35 
+## 
+## 
+## ***** (V1) SC_percent71_true *****
+##                        Before Matching        After Matching
+## mean treatment........     24.428             24.084 
+## mean control..........     14.155             20.358 
+## std mean diff.........     114.15             42.643 
+## 
+## mean raw eQQ diff.....     10.254             3.7258 
+## med  raw eQQ diff.....     9.8227             2.8909 
+## max  raw eQQ diff.....     24.813             17.593 
+## 
+## mean eCDF diff........    0.32765            0.13067 
+## med  eCDF diff........    0.35796            0.14732 
+## max  eCDF diff........     0.5227            0.21205 
+## 
+## var ratio (Tr/Co).....     1.6091             1.6345 
+## T-test p-value........ < 2.22e-16         < 2.22e-16 
+## KS Bootstrap p-value.. < 2.22e-16         < 2.22e-16 
+## KS Naive p-value...... < 2.22e-16         3.5656e-09 
+## KS Statistic..........     0.5227            0.21205 
+## 
+## 
+## ***** (V1) Pop_tot1971 *****
+##                        Before Matching        After Matching
+## mean treatment........     152792             152308 
+## mean control..........     155635             153128 
+## std mean diff.........    -7.8813            -2.2687 
+## 
+## mean raw eQQ diff.....     3762.8               1406 
+## med  raw eQQ diff.....       3428             1265.5 
+## max  raw eQQ diff.....      49188               8626 
+## 
+## mean eCDF diff........   0.031407           0.012087 
+## med  eCDF diff........   0.025131           0.011161 
+## max  eCDF diff........   0.079675           0.035714 
+## 
+## var ratio (Tr/Co).....     1.2404            0.99543 
+## T-test p-value........    0.10853            0.16106 
+## KS Bootstrap p-value..      0.006              0.934 
+## KS Naive p-value......   0.012095             0.9375 
+## KS Statistic..........   0.079675           0.035714 
+## 
+## 
+## ***** (V2) P_ST71 *****
+##                        Before Matching        After Matching
+## mean treatment........   0.030199           0.030382 
+## mean control..........   0.032385           0.031349 
+## std mean diff.........     -3.241            -1.4198 
+## 
+## mean raw eQQ diff.....  0.0038904          0.0027827 
+## med  raw eQQ diff.....  0.0004235         9.7339e-05 
+## max  raw eQQ diff.....   0.078037            0.10324 
+## 
+## mean eCDF diff........   0.023299          0.0090185 
+## med  eCDF diff........   0.022088          0.0066964 
+## max  eCDF diff........   0.058556            0.03125 
+## 
+## var ratio (Tr/Co).....    0.85838             1.0619 
+## T-test p-value........    0.52152            0.61552 
+## KS Bootstrap p-value..      0.126              0.967 
+## KS Naive p-value......    0.12667            0.98095 
+## KS Statistic..........   0.058556            0.03125 
+## 
+## 
+## ***** (V3) Plit71_nonSC *****
+##                        Before Matching        After Matching
+## mean treatment........     30.077             30.225 
+## mean control..........     32.299             30.477 
+## std mean diff.........    -19.128            -2.1782 
+## 
+## mean raw eQQ diff.....     2.3294            0.36379 
+## med  raw eQQ diff.....     1.8341            0.26569 
+## max  raw eQQ diff.....     11.245             6.5062 
+## 
+## mean eCDF diff........   0.041303          0.0084224 
+## med  eCDF diff........   0.048643          0.0066964 
+## max  eCDF diff........   0.075565           0.033482 
+## 
+## var ratio (Tr/Co).....     0.7381            0.99134 
+## T-test p-value........ 0.00020728            0.43955 
+## KS Bootstrap p-value..       0.01              0.956 
+## KS Naive p-value......   0.020209            0.96323 
+## KS Statistic..........   0.075565           0.033482 
+## 
+## 
+## ***** (V4) Plit71_SC *****
+##                        Before Matching        After Matching
+## mean treatment........     13.758             13.803 
+## mean control..........     16.784             13.839 
+## std mean diff.........    -34.138           -0.41382 
+## 
+## mean raw eQQ diff.....     3.0542            0.31335 
+## med  raw eQQ diff.....     2.1225            0.22261 
+## max  raw eQQ diff.....     14.604             5.0147 
+## 
+## mean eCDF diff........   0.069773           0.009855 
+## med  eCDF diff........   0.083206          0.0089286 
+## max  eCDF diff........    0.10326           0.035714 
+## 
+## var ratio (Tr/Co).....    0.58812             1.0164 
+## T-test p-value........ 1.5648e-10            0.87404 
+## KS Bootstrap p-value..      0.001              0.934 
+## KS Naive p-value...... 0.00037591             0.9375 
+## KS Statistic..........    0.10326           0.035714 
+## 
+## 
+## ***** (V5) P_W71_nonSC *****
+##                        Before Matching        After Matching
+## mean treatment........     31.826             31.806 
+## mean control..........     32.191             31.694 
+## std mean diff.........     -6.576             2.0498 
+## 
+## mean raw eQQ diff.....    0.42235            0.23915 
+## med  raw eQQ diff.....    0.32743            0.16738 
+## max  raw eQQ diff.....     8.2464             1.9853 
+## 
+## mean eCDF diff........   0.020747           0.010893 
+## med  eCDF diff........   0.020859          0.0089286 
+## max  eCDF diff........   0.049622           0.042411 
+## 
+## var ratio (Tr/Co).....      1.003             1.0195 
+## T-test p-value........    0.18749             0.3865 
+## KS Bootstrap p-value..      0.265              0.825 
+## KS Naive p-value......    0.27506            0.81522 
+## KS Statistic..........   0.049622           0.042411 
+## 
+## 
+## ***** (V6) P_W71_SC *****
+##                        Before Matching        After Matching
+## mean treatment........     37.098             37.141 
+## mean control..........     37.526             37.061 
+## std mean diff.........    -5.0328            0.93379 
+## 
+## mean raw eQQ diff.....    0.71618            0.43899 
+## med  raw eQQ diff.....    0.65867            0.38505 
+## max  raw eQQ diff.....     15.494             4.6746 
+## 
+## mean eCDF diff........   0.026254           0.014039 
+## med  eCDF diff........   0.018033           0.011161 
+## max  eCDF diff........   0.066858           0.049107 
+## 
+## var ratio (Tr/Co).....     1.0818             1.0898 
+## T-test p-value........    0.31003             0.6708 
+## KS Bootstrap p-value..      0.052               0.66 
+## KS Naive p-value......   0.054816            0.65251 
+## KS Statistic..........   0.066858           0.049107 
+## 
+## 
+## ***** (V7) P_al71_nonSC *****
+##                        Before Matching        After Matching
+## mean treatment........     20.047             20.207 
+## mean control..........     21.655             20.094 
+## std mean diff.........    -13.333             0.9434 
+## 
+## mean raw eQQ diff.....     1.7003            0.44213 
+## med  raw eQQ diff.....     1.6272            0.36973 
+## max  raw eQQ diff.....     13.572             3.1524 
+## 
+## mean eCDF diff........   0.031342          0.0098443 
+## med  eCDF diff........   0.032108          0.0089286 
+## max  eCDF diff........   0.080261            0.03125 
+## 
+## var ratio (Tr/Co).....    0.82147            0.99566 
+## T-test p-value........  0.0087897            0.71199 
+## KS Bootstrap p-value..      0.005              0.976 
+## KS Naive p-value......   0.011217            0.98095 
+## KS Statistic..........   0.080261            0.03125 
+## 
+## 
+## ***** (V8) P_al71_SC *****
+##                        Before Matching        After Matching
+## mean treatment........     51.434             51.917 
+## mean control..........      50.72             52.073 
+## std mean diff.........     3.0293           -0.66415 
+## 
+## mean raw eQQ diff.....    0.81627            0.63144 
+## med  raw eQQ diff.....    0.67657            0.52672 
+## max  raw eQQ diff.....     2.5171             2.6036 
+## 
+## mean eCDF diff........  0.0087407          0.0074354 
+## med  eCDF diff........  0.0081475          0.0066964 
+## max  eCDF diff........    0.02865           0.029018 
+## 
+## var ratio (Tr/Co).....     1.0061             1.0162 
+## T-test p-value........    0.54343               0.76 
+## KS Bootstrap p-value..      0.868              0.984 
+## KS Naive p-value......    0.89594            0.99167 
+## KS Statistic..........    0.02865           0.029018 
+## 
+## 
+## Before Matching Minimum p.value: 1.5648e-10 
+## Variable Name(s): Plit71_SC  Number(s): 4 
+## 
+## After Matching Minimum p.value: 0.16106 
+## Variable Name(s): Pop_tot1971  Number(s): 1 
+## 
+## \begin{table}[ht] 
+## \caption{Difference in means for treated and control and Balance output from matches} 
+##  \begin{tabular}{lrrcrr} \hline \hline 
+## Covariate    &\multicolumn{2}{c}{Before matching}&&\multicolumn{2}{c}{After matching}\\\cline{2-3} \cline{5-6} 
+## & \emph{t p}-value &KS \emph{p}-value &&\emph{t p}-value &KS \emph{p}-value\\
+## Population size&0.11&0.01&&0.16&0.93\\
+## Percentage of STs&0.52&0.13&&0.62&0.97\\
+## Literacy rate (non-SCs)&0&0.01&&0.44&0.96\\
+## Literacy rate (SCs)&0&0&&0.87&0.93\\
+## Employment (non-SCs)&0.19&0.26&&0.39&0.82\\
+## Employment (SCs)&0.31&0.05&&0.67&0.66\\
+## Agricultural laborers (non-SCs)&0.01&0&&0.71&0.98\\
+## Agricultural laborers (SCs)&0.54&0.87&&0.76&0.98\\
+## \end{tabular} \end{table}
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from matchdta (pos = 3):
+## 
+##     AC_name_1976, AC_name_2001, AC_no_2001, AC_number_1976,
+##     AC_type_1976, AC_type_2001, AC_type_noST, DELIM_district_no,
+##     District_name, P_al, P_al_71gap, P_al_gap, P_al_nonSC, P_al_SC,
+##     P_al71_nonSC, P_al71_SC, P_commVD01, P_commVD01_gap,
+##     P_commVD01_nonSC, P_commVD01_sc, P_educVD01, P_educVD01_gap,
+##     P_educVD01_nonSC, P_educVD01_sc, P_elecVD01, P_elecVD01_gap,
+##     P_elecVD01_nonSC, P_elecVD01_sc, P_medicVD01, P_medicVD01_gap,
+##     P_medicVD01_nonSC, P_medicVD01_sc, P_SC_VD01, P_ST71, P_W, P_W_gap,
+##     P_W_nonSC, P_W_SC, P_W71, P_W71_gap, P_W71_nonSC, P_W71_SC,
+##     PC_name_1976, PC_name_2001, PC_no_1976, PC_no_2001, PC_type_1976,
+##     PC_type_2001, Pfemale, Plit, Plit_7, Plit_7_gap, Plit_71gap,
+##     Plit_gap, Plit_nonSC, Plit_nonSC_7, Plit_SC, Plit_SC_7, Plit71,
+##     Plit71_nonSC, Plit71_SC, Pmain, Pmain_SC, Pmarg, Pmarg_SC, Pnonw,
+##     Pnonw_nonSC, Pnonw_SC, Pop_tot1971, Prural, Psc, Pst,
+##     SC_percent71_true, SC_pop71_true, SC_tot1971, ST_tot1971,
+##     State_name_1976, State_name_2001, State_no_2001_old,
+##     State_number_2001, tot_pop71_true, VD01_TotPop
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: MASS
+\end{verbatim}
+
+\begin{verbatim}
+## ## 
+## ##  Matching (Version 4.10-8, Build Date: 2022-11-03)
+## ##  See http://sekhon.berkeley.edu/matching for additional documentation.
+## ##  Please cite software as:
+## ##   Jasjeet S. Sekhon. 2011. ``Multivariate and Propensity Score Matching
+## ##   Software with Automated Balance Optimization: The Matching package for R.''
+## ##   Journal of Statistical Software, 42(7): 1-52. 
+## ##
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Estimate...  0.020474 
+## SE.........  0.34435 
+## T-stat.....  0.059456 
+## p.val......  0.95259 
+## 
+## Original number of observations..............  2892 
+## Original number of treated obs...............  483 
+## Matched number of observations...............  324 
+## Matched number of observations  (unweighted).  324 
+## 
+## Number of obs dropped by 'exact' or 'caliper'  159 
+## 
+## 
+## ***** (V1) SC_percent71_true *****
+##                        Before Matching        After Matching
+## mean treatment........     24.428             21.616 
+## mean control..........     14.155             20.125 
+## std mean diff.........     114.15             21.111 
+## 
+## mean raw eQQ diff.....     10.254             1.4987 
+## med  raw eQQ diff.....     9.8227             1.4788 
+## max  raw eQQ diff.....     24.813             2.9513 
+## 
+## mean eCDF diff........    0.32765           0.063881 
+## med  eCDF diff........    0.35796           0.064815 
+## max  eCDF diff........     0.5227            0.12654 
+## 
+## var ratio (Tr/Co).....     1.6091             1.0286 
+## T-test p-value........ < 2.22e-16         < 2.22e-16 
+## KS Bootstrap p-value.. < 2.22e-16              0.005 
+## KS Naive p-value...... < 2.22e-16           0.011163 
+## KS Statistic..........     0.5227            0.12654 
+## 
+## 
+## ***** (V1) Pop_tot1971 *****
+##                        Before Matching        After Matching
+## mean treatment........     152792             152793 
+## mean control..........     155635             153307 
+## std mean diff.........    -7.8813            -1.4593 
+## 
+## mean raw eQQ diff.....     3762.8             1621.1 
+## med  raw eQQ diff.....       3428               1477 
+## max  raw eQQ diff.....      49188               8626 
+## 
+## mean eCDF diff........   0.031407           0.013791 
+## med  eCDF diff........   0.025131           0.012346 
+## max  eCDF diff........   0.079675           0.052469 
+## 
+## var ratio (Tr/Co).....     1.2404             1.0223 
+## T-test p-value........    0.10853             0.4128 
+## KS Bootstrap p-value..      0.008              0.776 
+## KS Naive p-value......   0.012095            0.76391 
+## KS Statistic..........   0.079675           0.052469 
+## 
+## 
+## ***** (V2) P_ST71 *****
+##                        Before Matching        After Matching
+## mean treatment........   0.030199           0.028123 
+## mean control..........   0.032385           0.029273 
+## std mean diff.........     -3.241            -1.9034 
+## 
+## mean raw eQQ diff.....  0.0038904          0.0025005 
+## med  raw eQQ diff.....  0.0004235         0.00012118 
+## max  raw eQQ diff.....   0.078037           0.030522 
+## 
+## mean eCDF diff........   0.023299           0.011345 
+## med  eCDF diff........   0.022088          0.0092593 
+## max  eCDF diff........   0.058556            0.04321 
+## 
+## var ratio (Tr/Co).....    0.85838            0.97961 
+## T-test p-value........    0.52152            0.52936 
+## KS Bootstrap p-value..      0.121              0.915 
+## KS Naive p-value......    0.12667            0.92284 
+## KS Statistic..........   0.058556            0.04321 
+## 
+## 
+## ***** (V3) Plit71_nonSC *****
+##                        Before Matching        After Matching
+## mean treatment........     30.077             29.646 
+## mean control..........     32.299             29.678 
+## std mean diff.........    -19.128            -0.2734 
+## 
+## mean raw eQQ diff.....     2.3294             0.5375 
+## med  raw eQQ diff.....     1.8341            0.43598 
+## max  raw eQQ diff.....     11.245             6.5062 
+## 
+## mean eCDF diff........   0.041303           0.014559 
+## med  eCDF diff........   0.048643           0.012346 
+## max  eCDF diff........   0.075565            0.04321 
+## 
+## var ratio (Tr/Co).....     0.7381             1.0191 
+## T-test p-value........ 0.00020728            0.93067 
+## KS Bootstrap p-value..       0.02              0.898 
+## KS Naive p-value......   0.020209            0.92284 
+## KS Statistic..........   0.075565            0.04321 
+## 
+## 
+## ***** (V4) Plit71_SC *****
+##                        Before Matching        After Matching
+## mean treatment........     13.758             13.436 
+## mean control..........     16.784             13.306 
+## std mean diff.........    -34.138             1.4086 
+## 
+## mean raw eQQ diff.....     3.0542            0.38037 
+## med  raw eQQ diff.....     2.1225             0.2126 
+## max  raw eQQ diff.....     14.604             5.1686 
+## 
+## mean eCDF diff........   0.069773           0.010096 
+## med  eCDF diff........   0.083206          0.0092593 
+## max  eCDF diff........    0.10326           0.033951 
+## 
+## var ratio (Tr/Co).....    0.58812             1.0569 
+## T-test p-value........ 1.5648e-10            0.60619 
+## KS Bootstrap p-value.. < 2.22e-16              0.994 
+## KS Naive p-value...... 0.00037591            0.99216 
+## KS Statistic..........    0.10326           0.033951 
+## 
+## 
+## ***** (V5) P_W71_nonSC *****
+##                        Before Matching        After Matching
+## mean treatment........     31.826             31.831 
+## mean control..........     32.191             31.839 
+## std mean diff.........     -6.576           -0.14404 
+## 
+## mean raw eQQ diff.....    0.42235            0.29265 
+## med  raw eQQ diff.....    0.32743            0.21787 
+## max  raw eQQ diff.....     8.2464             1.9778 
+## 
+## mean eCDF diff........   0.020747           0.013201 
+## med  eCDF diff........   0.020859          0.0092593 
+## max  eCDF diff........   0.049622           0.049383 
+## 
+## var ratio (Tr/Co).....      1.003            0.95766 
+## T-test p-value........    0.18749            0.95675 
+## KS Bootstrap p-value..      0.257              0.784 
+## KS Naive p-value......    0.27506            0.82439 
+## KS Statistic..........   0.049622           0.049383 
+## 
+## 
+## ***** (V6) P_W71_SC *****
+##                        Before Matching        After Matching
+## mean treatment........     37.098             37.264 
+## mean control..........     37.526             37.302 
+## std mean diff.........    -5.0328           -0.43999 
+## 
+## mean raw eQQ diff.....    0.71618            0.44054 
+## med  raw eQQ diff.....    0.65867            0.37404 
+## max  raw eQQ diff.....     15.494             4.6746 
+## 
+## mean eCDF diff........   0.026254           0.013214 
+## med  eCDF diff........   0.018033           0.012346 
+## max  eCDF diff........   0.066858            0.04321 
+## 
+## var ratio (Tr/Co).....     1.0818             1.0966 
+## T-test p-value........    0.31003            0.85483 
+## KS Bootstrap p-value..      0.066              0.914 
+## KS Naive p-value......   0.054816            0.92284 
+## KS Statistic..........   0.066858            0.04321 
+## 
+## 
+## ***** (V7) P_al71_nonSC *****
+##                        Before Matching        After Matching
+## mean treatment........     20.047             19.887 
+## mean control..........     21.655             20.112 
+## std mean diff.........    -13.333            -1.8665 
+## 
+## mean raw eQQ diff.....     1.7003            0.53298 
+## med  raw eQQ diff.....     1.6272            0.40406 
+## max  raw eQQ diff.....     13.572             3.3898 
+## 
+## mean eCDF diff........   0.031342           0.010607 
+## med  eCDF diff........   0.032108          0.0092593 
+## max  eCDF diff........   0.080261           0.030864 
+## 
+## var ratio (Tr/Co).....    0.82147            0.97095 
+## T-test p-value........  0.0087897            0.50087 
+## KS Bootstrap p-value..       0.01                  1 
+## KS Naive p-value......   0.011217            0.99785 
+## KS Statistic..........   0.080261           0.030864 
+## 
+## 
+## ***** (V8) P_al71_SC *****
+##                        Before Matching        After Matching
+## mean treatment........     51.434             52.504 
+## mean control..........      50.72             52.996 
+## std mean diff.........     3.0293            -2.1239 
+## 
+## mean raw eQQ diff.....    0.81627            0.76762 
+## med  raw eQQ diff.....    0.67657            0.62787 
+## max  raw eQQ diff.....     2.5171             2.7728 
+## 
+## mean eCDF diff........  0.0087407          0.0093843 
+## med  eCDF diff........  0.0081475          0.0092593 
+## max  eCDF diff........    0.02865           0.037037 
+## 
+## var ratio (Tr/Co).....     1.0061             1.0044 
+## T-test p-value........    0.54343            0.39455 
+## KS Bootstrap p-value..      0.909               0.97 
+## KS Naive p-value......    0.89594            0.97936 
+## KS Statistic..........    0.02865           0.037037 
+## 
+## 
+## Before Matching Minimum p.value: < 2.22e-16 
+## Variable Name(s): Plit71_SC  Number(s): 4 
+## 
+## After Matching Minimum p.value: 0.39455 
+## Variable Name(s): P_al71_SC  Number(s): 8 
+## 
+## \begin{table}[ht] 
+## \caption{Difference in means for treated and control and Balance output from matches} 
+##  \begin{tabular}{lrrcrr} \hline \hline 
+## Covariate    &\multicolumn{2}{c}{Before matching}&&\multicolumn{2}{c}{After matching}\\\cline{2-3} \cline{5-6} 
+## & \emph{t p}-value &KS \emph{p}-value &&\emph{t p}-value &KS \emph{p}-value\\
+## Population size&0.11&0.01&&0.41&0.78\\
+## Percentage of STs&0.52&0.12&&0.53&0.92\\
+## Literacy rate (non-SCs)&0&0.02&&0.93&0.9\\
+## Literacy rate (SCs)&0&0&&0.61&0.99\\
+## Employment (non-SCs)&0.19&0.26&&0.96&0.78\\
+## Employment (SCs)&0.31&0.07&&0.85&0.91\\
+## Agricultural laborers (non-SCs)&0.01&0.01&&0.5&1\\
+## Agricultural laborers (SCs)&0.54&0.91&&0.39&0.97\\
+## \end{tabular} \end{table}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Table 2 combines the balance output from the two matching models}
+
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\CommentTok{\# BALANCE FIGURE {-}{-}{-}{-}}
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+
+\FunctionTok{detach}\NormalTok{(matchdta)}
+
+\DocumentationTok{\#\# Balance on SC percentage {-}{-}{-}{-}}
+
+\FunctionTok{t.test}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true}\SpecialCharTok{\textasciitilde{}}\NormalTok{devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Welch Two Sample t-test
+## 
+## data:  devDTA$SC_percent71_true by devDTA$AC_type_noST
+## t = -23.657, df = 607.71, p-value < 2.2e-16
+## alternative hypothesis: true difference in means between group GEN and group SC is not equal to 0
+## 95 percent confidence interval:
+##  -11.126297  -9.420619
+## sample estimates:
+## mean in group GEN  mean in group SC 
+##          14.15491          24.42836
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(matched1}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true}\SpecialCharTok{\textasciitilde{}}\NormalTok{matched1}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Welch Two Sample t-test
+## 
+## data:  matched1$SC_percent71_true by matched1$AC_type_noST
+## t = -7.1093, df = 844.99, p-value = 2.483e-12
+## alternative hypothesis: true difference in means between group GEN and group SC is not equal to 0
+## 95 percent confidence interval:
+##  -4.754502 -2.697195
+## sample estimates:
+## mean in group GEN  mean in group SC 
+##          20.35843          24.08427
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true}\SpecialCharTok{\textasciitilde{}}\NormalTok{matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Welch Two Sample t-test
+## 
+## data:  matched2$SC_percent71_true by matched2$AC_type_noST
+## t = -2.7059, df = 645.87, p-value = 0.006992
+## alternative hypothesis: true difference in means between group GEN and group SC is not equal to 0
+## 95 percent confidence interval:
+##  -2.572629 -0.408933
+## sample estimates:
+## mean in group GEN  mean in group SC 
+##          20.12505          21.61583
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Figure showing balance on percentage SC {-}{-}{-}{-}}
+\FunctionTok{pdf}\NormalTok{(}\StringTok{"Figures/Fig\_SC\_percent71\_balance\_AEJ.pdf"}\NormalTok{, }\AttributeTok{width=}\DecValTok{7}\NormalTok{, }\AttributeTok{height=}\DecValTok{3}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mai =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{0.1}\NormalTok{))}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true[devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{==}\StringTok{"SC"} \SpecialCharTok{\&} \FunctionTok{complete.cases}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)]), }\AttributeTok{col=}\StringTok{"\#FF1493"}\NormalTok{, }\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{60}\NormalTok{), }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.1}\NormalTok{), }\AttributeTok{main=}\StringTok{"Before matching"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"Percentage of SCs in constituency"}\NormalTok{, }\AttributeTok{las=}\DecValTok{1}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(}\FunctionTok{density}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true[devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{==}\StringTok{"GEN"} \SpecialCharTok{\&} \FunctionTok{complete.cases}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)]), }\AttributeTok{col=}\StringTok{"\#00688B"}\NormalTok{, }\AttributeTok{lty=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"General (N="}\NormalTok{, }\FunctionTok{summary}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)[}\DecValTok{1}\NormalTok{], }\StringTok{")"}\NormalTok{, }\AttributeTok{sep=}\StringTok{""}\NormalTok{), }\FunctionTok{paste}\NormalTok{(}\StringTok{"Reserved (N="}\NormalTok{, }\FunctionTok{summary}\NormalTok{(devDTA}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)[}\DecValTok{2}\NormalTok{], }\StringTok{")"}\NormalTok{, }\AttributeTok{sep=}\StringTok{""}\NormalTok{)), }\AttributeTok{lty=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"\#00688B"}\NormalTok{, }\StringTok{"\#FF1493"}\NormalTok{))}
+
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(matched1}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true[matched1}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{==}\StringTok{"SC"}\NormalTok{]), }\AttributeTok{col=}\StringTok{"\#FF1493"}\NormalTok{, }\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{60}\NormalTok{), }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.1}\NormalTok{), }\AttributeTok{main=}\StringTok{"After matching"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"Percentage of SCs in constituency"}\NormalTok{ , }\AttributeTok{las=}\DecValTok{1}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(}\FunctionTok{density}\NormalTok{(matched1}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true[matched1}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{==}\StringTok{"GEN"}\NormalTok{]), }\AttributeTok{col=}\StringTok{"\#00688B"}\NormalTok{, }\AttributeTok{lty=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"General (N="}\NormalTok{, }\FunctionTok{summary}\NormalTok{(matched1}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)[}\DecValTok{1}\NormalTok{], }\StringTok{")"}\NormalTok{, }\AttributeTok{sep=}\StringTok{""}\NormalTok{), }\FunctionTok{paste}\NormalTok{(}\StringTok{"Reserved (N="}\NormalTok{, }\FunctionTok{summary}\NormalTok{(matched1}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)[}\DecValTok{2}\NormalTok{], }\StringTok{")"}\NormalTok{, }\AttributeTok{sep=}\StringTok{""}\NormalTok{)), }\AttributeTok{lty=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"\#00688B"}\NormalTok{, }\StringTok{"\#FF1493"}\NormalTok{))}
+
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true[matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{==}\StringTok{"SC"}\NormalTok{]), }\AttributeTok{col=}\StringTok{"\#FF1493"}\NormalTok{, }\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{60}\NormalTok{), }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.1}\NormalTok{), }\AttributeTok{main=}\StringTok{"After matching with caliper"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"Percentage of SCs in constituency"}\NormalTok{, }\AttributeTok{las=}\DecValTok{1}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(}\FunctionTok{density}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true[matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{==}\StringTok{"GEN"}\NormalTok{]), }\AttributeTok{col=}\StringTok{"\#00688B"}\NormalTok{, }\AttributeTok{lty=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"General (N="}\NormalTok{, }\FunctionTok{summary}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)[}\DecValTok{1}\NormalTok{], }\StringTok{")"}\NormalTok{, }\AttributeTok{sep=}\StringTok{""}\NormalTok{), }\FunctionTok{paste}\NormalTok{(}\StringTok{"Reserved (N="}\NormalTok{, }\FunctionTok{summary}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)[}\DecValTok{2}\NormalTok{], }\StringTok{")"}\NormalTok{, }\AttributeTok{sep=}\StringTok{""}\NormalTok{)), }\AttributeTok{lty=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"\#00688B"}\NormalTok{, }\StringTok{"\#FF1493"}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\DocumentationTok{\#\# MATCHING ESTIMATES {-}{-}{-}{-}}
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+
+\DocumentationTok{\#\#Calculating matching estimates for Table 3 and Figure 4}
+\DocumentationTok{\#\#Remove \# from lines with alternative SE specification to check robustness to other SEs.}
+
+\NormalTok{mymatrix}\OtherTok{\textless{}{-}}\FunctionTok{matrix}\NormalTok{(}\AttributeTok{nrow=}\FunctionTok{length}\NormalTok{(outcomeindex), }\AttributeTok{ncol=}\DecValTok{12}\NormalTok{)}
+
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{2}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(outcomeindex))\{}
+
+\NormalTok{matched1\_smaller}\OtherTok{\textless{}{-}}\NormalTok{matched1[}\FunctionTok{complete.cases}\NormalTok{(matched1[outcomeindex[i]], matched1}\SpecialCharTok{$}\NormalTok{AC\_type\_noST),]}
+\NormalTok{matched2\_smaller}\OtherTok{\textless{}{-}}\NormalTok{matched2[}\FunctionTok{complete.cases}\NormalTok{(matched2[outcomeindex[i]], matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST),]}
+
+\NormalTok{mymodel}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(matched1\_smaller[, outcomeindex[i]]}\SpecialCharTok{\textasciitilde{}}\NormalTok{ matched1\_smaller}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)}
+
+\CommentTok{\#SEs clustered at state level}
+\NormalTok{mySE}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(mymodel, }\AttributeTok{data=}\NormalTok{ matched1\_smaller, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+
+\NormalTok{mymatrix[i,}\DecValTok{1}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(mymodel}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{)}
+\NormalTok{mymatrix[i,}\DecValTok{2}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(mymodel}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{+}\FunctionTok{qnorm}\NormalTok{(.}\DecValTok{975}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{)}
+\NormalTok{mymatrix[i,}\DecValTok{3}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(mymodel}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\FunctionTok{qnorm}\NormalTok{(.}\DecValTok{975}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{)}
+\NormalTok{mymatrix[i,}\DecValTok{4}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{]}\SpecialCharTok{\textless{}}\FloatTok{0.01}\NormalTok{, }\StringTok{"\textless{}0.01"}\NormalTok{,   }\FunctionTok{round}\NormalTok{(}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{],}\DecValTok{2}\NormalTok{))}
+
+\CommentTok{\# Naive SEs from OLS}
+\CommentTok{\#mymatrix[i,c(2:3)]\textless{}{-}round(confint(mymodel)[2,],2)}
+\CommentTok{\#mymatrix[i,4]\textless{}{-}ifelse(coef(summary.lm(mymodel))[2,4]\textless{}0.01, "\textless{}0.01", round(coef(summary.lm(mymodel))[2,4],2))}
+
+\CommentTok{\#And now with caliper}
+\NormalTok{mymodel}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(matched2\_smaller[, outcomeindex[i]]}\SpecialCharTok{\textasciitilde{}}\NormalTok{ matched2\_smaller}\SpecialCharTok{$}\NormalTok{AC\_type\_noST)}
+
+\CommentTok{\#SEs clustered at state level}
+\NormalTok{mySE}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(mymodel, }\AttributeTok{data=}\NormalTok{ matched2\_smaller, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+
+\NormalTok{mymatrix[i,}\DecValTok{5}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(mymodel}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{)}
+\NormalTok{mymatrix[i,}\DecValTok{6}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(mymodel}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{+}\FunctionTok{qnorm}\NormalTok{(.}\DecValTok{975}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{)}
+\NormalTok{mymatrix[i,}\DecValTok{7}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(mymodel}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\FunctionTok{qnorm}\NormalTok{(.}\DecValTok{975}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{)}
+\NormalTok{mymatrix[i,}\DecValTok{8}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{]}\SpecialCharTok{\textless{}}\FloatTok{0.01}\NormalTok{, }\StringTok{"\textless{}0.01"}\NormalTok{,   }\FunctionTok{round}\NormalTok{(}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{],}\DecValTok{2}\NormalTok{))}
+
+\CommentTok{\# Naive SEs from OLS}
+\CommentTok{\#mymatrix[i,c(6:7)]\textless{}{-}round(confint(mymodel)[2,],2)}
+\CommentTok{\#mymatrix[i,8]\textless{}{-}ifelse(coef(summary.lm(mymodel))[2,4]\textless{}0.01, "\textless{}0.01", round(coef(summary.lm(mymodel))[2,4],2))}
+
+\CommentTok{\#And now with bias adjust}
+
+\NormalTok{SCpop}\OtherTok{\textless{}{-}}\NormalTok{matched2\_smaller}\SpecialCharTok{$}\NormalTok{SC\_pop71\_true}
+\NormalTok{mymodel}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(matched2\_smaller[, outcomeindex[i]]}\SpecialCharTok{\textasciitilde{}}\NormalTok{ matched2\_smaller}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{+}\NormalTok{ SCpop)}
+
+\CommentTok{\#SEs clustered at state level}
+\NormalTok{mySE}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(mymodel, }\AttributeTok{data=}\NormalTok{ matched2\_smaller, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+
+\NormalTok{mymatrix[i,}\DecValTok{9}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(mymodel}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{)}
+\NormalTok{mymatrix[i,}\DecValTok{10}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(mymodel}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{+}\FunctionTok{qnorm}\NormalTok{(.}\DecValTok{975}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{)}
+\NormalTok{mymatrix[i,}\DecValTok{11}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{round}\NormalTok{(mymodel}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\FunctionTok{qnorm}\NormalTok{(.}\DecValTok{975}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{)}
+\NormalTok{mymatrix[i,}\DecValTok{12}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{]}\SpecialCharTok{\textless{}}\FloatTok{0.01}\NormalTok{, }\StringTok{"\textless{}0.01"}\NormalTok{,  }\FunctionTok{round}\NormalTok{(}\FunctionTok{coeftest}\NormalTok{(mymodel, mySE)[}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{],}\DecValTok{2}\NormalTok{))}
+
+\CommentTok{\# Naive SEs from OLS}
+\CommentTok{\#mymatrix[i,c(10:11)]\textless{}{-}round(confint(mymodel)[2,],2)}
+\CommentTok{\#mymatrix[i,12]\textless{}{-}ifelse(coef(summary.lm(mymodel))[2,4]\textless{}0.01, "\textless{}0.01", round(coef(summary.lm(mymodel))[2,4],2))}
+\NormalTok{\}   }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     63.24312    2.33191  27.121   <2e-16 ***
+## matched1_smaller$AC_type_noSTSC -0.17750    0.32335  -0.549   0.5832    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     62.432483   2.462555 25.3527   <2e-16 ***
+## matched2_smaller$AC_type_noSTSC  0.061848   0.324600  0.1905   0.8489    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value  Pr(>|t|)    
+## (Intercept)                      6.9219e+01  3.9321e+00 17.6037 < 2.2e-16 ***
+## matched2_smaller$AC_type_noSTSC  5.4883e-01  3.0770e-01  1.7836  0.074952 .  
+## SCpop                           -2.1992e-04  8.1555e-05 -2.6966  0.007189 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     40.355692   1.790295 22.5414   <2e-16 ***
+## matched1_smaller$AC_type_noSTSC -0.077931   0.204901 -0.3803   0.7038    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     40.40130    1.83082 22.0673   <2e-16 ***
+## matched2_smaller$AC_type_noSTSC -0.24835    0.23298 -1.0659   0.2868    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value  Pr(>|t|)    
+## (Intercept)                      4.5885e+01  2.2703e+00 20.2107 < 2.2e-16 ***
+## matched2_smaller$AC_type_noSTSC  1.4512e-01  3.3822e-01  0.4291  0.668006    
+## SCpop                           -1.7769e-04  5.2768e-05 -3.3674  0.000804 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     12.026325   1.398213  8.6012   <2e-16 ***
+## matched1_smaller$AC_type_noSTSC  0.088062   0.219621  0.4010   0.6885    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value  Pr(>|t|)    
+## (Intercept)                     11.97173    1.43332  8.3524 4.082e-16 ***
+## matched2_smaller$AC_type_noSTSC -0.18921    0.25781 -0.7339    0.4633    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value  Pr(>|t|)    
+## (Intercept)                      1.1712e+01  2.7361e+00  4.2806 2.147e-05 ***
+## matched2_smaller$AC_type_noSTSC -2.0783e-01  3.5131e-01 -0.5916    0.5543    
+## SCpop                            8.4126e-06  7.0106e-05  0.1200    0.9045    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     89.91601    4.55575 19.7368   <2e-16 ***
+## matched1_smaller$AC_type_noSTSC -1.18843    0.84629 -1.4043   0.1606    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     89.28447    5.37436 16.6130   <2e-16 ***
+## matched2_smaller$AC_type_noSTSC -0.79427    0.65811 -1.2069   0.2279    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value  Pr(>|t|)    
+## (Intercept)                      1.0045e+02  6.7100e+00 14.9697 < 2.2e-16 ***
+## matched2_smaller$AC_type_noSTSC  2.6888e-02  6.3566e-01  0.0423    0.9663    
+## SCpop                           -3.6136e-04  7.1688e-05 -5.0407 6.044e-07 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     94.54775    1.44711 65.3357   <2e-16 ***
+## matched1_smaller$AC_type_noSTSC -0.32103    0.34245 -0.9375   0.3488    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     94.86257    1.41712  66.941   <2e-16 ***
+## matched2_smaller$AC_type_noSTSC -0.53109    0.42048  -1.263    0.207    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value Pr(>|t|)    
+## (Intercept)                      9.9203e+01  2.3565e+00 42.0976  < 2e-16 ***
+## matched2_smaller$AC_type_noSTSC -2.1175e-01  5.0573e-01 -0.4187  0.67558    
+## SCpop                           -1.4053e-04  6.6311e-05 -2.1192  0.03445 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     59.50074    5.51206 10.7946   <2e-16 ***
+## matched1_smaller$AC_type_noSTSC -0.26280    0.41943 -0.6266   0.5311    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     59.11194    5.50112 10.7454   <2e-16 ***
+## matched2_smaller$AC_type_noSTSC -1.03189    0.62688 -1.6461   0.1002    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value  Pr(>|t|)    
+## (Intercept)                     69.19743526  8.51680412  8.1248 2.315e-15 ***
+## matched2_smaller$AC_type_noSTSC -0.28990213  0.62260857 -0.4656    0.6416    
+## SCpop                           -0.00032652  0.00020348 -1.6047    0.1091    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     72.01507    5.19831 13.8536   <2e-16 ***
+## matched1_smaller$AC_type_noSTSC -0.51174    0.75798 -0.6751   0.4998    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     71.55872    5.31860 13.4544   <2e-16 ***
+## matched2_smaller$AC_type_noSTSC -0.33634    0.95575 -0.3519    0.725    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value  Pr(>|t|)    
+## (Intercept)                     89.20366602  6.45146789 13.8269 < 2.2e-16 ***
+## matched2_smaller$AC_type_noSTSC  0.96179581  0.92244178  1.0427    0.2975    
+## SCpop                           -0.00057126  0.00012599 -4.5341 6.907e-06 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                   Estimate Std. Error  t value Pr(>|t|)    
+## (Intercept)                     -12.663418   1.229398 -10.3005   <2e-16 ***
+## matched1_smaller$AC_type_noSTSC  -0.030838   0.199028  -0.1549   0.8769    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                   Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     -13.057534   1.410475 -9.2575   <2e-16 ***
+## matched2_smaller$AC_type_noSTSC   0.012087   0.233456  0.0518   0.9587    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value Pr(>|t|)    
+## (Intercept)                     -7.9787e+00  2.2107e+00 -3.6092 0.000331 ***
+## matched2_smaller$AC_type_noSTSC  3.7651e-01  2.4131e-01  1.5603 0.119179    
+## SCpop                           -1.6457e-04  6.2066e-05 -2.6516 0.008208 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value  Pr(>|t|)    
+## (Intercept)                     2.6311977  0.6144606  4.2821 2.051e-05 ***
+## matched1_smaller$AC_type_noSTSC 0.0044454  0.0793047  0.0561    0.9553    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                      2.557692   0.660576  3.8719 0.000119 ***
+## matched2_smaller$AC_type_noSTSC -0.058075   0.125656 -0.4622 0.644110    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value Pr(>|t|)  
+## (Intercept)                      8.3172e-01  1.2133e+00  0.6855  0.49328  
+## matched2_smaller$AC_type_noSTSC -1.8192e-01  1.4332e-01 -1.2693  0.20479  
+## SCpop                            5.5928e-05  2.9954e-05  1.8671  0.06234 .
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value  Pr(>|t|)    
+## (Intercept)                     11.191301   1.377774  8.1227 1.507e-15 ***
+## matched1_smaller$AC_type_noSTSC  0.019311   0.140233  0.1377    0.8905    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     11.316362   1.281372  8.8314   <2e-16 ***
+## matched2_smaller$AC_type_noSTSC -0.042679   0.169811 -0.2513   0.8016    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value  Pr(>|t|)    
+## (Intercept)                      1.0054e+01  2.3894e+00  4.2078 2.944e-05 ***
+## matched2_smaller$AC_type_noSTSC -1.3324e-01  2.4855e-01 -0.5361    0.5921    
+## SCpop                            4.0896e-05  7.4174e-05  0.5514    0.5816    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)
+## (Intercept)                     0.014774   0.274141  0.0539   0.9570
+## matched1_smaller$AC_type_noSTSC 0.024607   0.120938  0.2035   0.8388
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)
+## (Intercept)                     0.033241   0.230477  0.1442   0.8854
+## matched2_smaller$AC_type_noSTSC 0.223196   0.197200  1.1318   0.2581
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value Pr(>|t|)
+## (Intercept)                      5.4169e-01  4.1716e-01  1.2985   0.1946
+## matched2_smaller$AC_type_noSTSC  2.6060e-01  1.8396e-01  1.4166   0.1571
+## SCpop                           -1.6461e-05  1.6225e-05 -1.0146   0.3107
+## 
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value Pr(>|t|)
+## (Intercept)                      0.187591   0.222266  0.8440   0.3989
+## matched1_smaller$AC_type_noSTSC -0.062651   0.102404 -0.6118   0.5408
+## 
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value Pr(>|t|)
+## (Intercept)                      0.128753   0.291471  0.4417   0.6588
+## matched2_smaller$AC_type_noSTSC -0.013698   0.128657 -0.1065   0.9152
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value Pr(>|t|)
+## (Intercept)                     -2.9159e-01  4.6660e-01 -0.6249   0.5322
+## matched2_smaller$AC_type_noSTSC -4.4622e-02  1.1822e-01 -0.3775   0.7060
+## SCpop                            1.3609e-05  1.6177e-05  0.8412   0.4005
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)  
+## (Intercept)                     -0.83159    0.45161 -1.8414   0.0659 .
+## matched1_smaller$AC_type_noSTSC -0.28808    0.34470 -0.8357   0.4035  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)   
+## (Intercept)                     -1.20091    0.39877 -3.0115 0.002702 **
+## matched2_smaller$AC_type_noSTSC  0.32503    0.30041  1.0820 0.279669   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value Pr(>|t|)   
+## (Intercept)                      2.4365e-01  8.4580e-01  0.2881 0.773388   
+## matched2_smaller$AC_type_noSTSC  4.3131e-01  3.0319e-01  1.4226 0.155344   
+## SCpop                           -4.6768e-05  1.8028e-05 -2.5941 0.009701 **
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)
+## (Intercept)                     -0.46014    0.31587 -1.4567   0.1455
+## matched1_smaller$AC_type_noSTSC -0.31230    0.23273 -1.3419   0.1800
+## 
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value Pr(>|t|)
+## (Intercept)                     -0.39559    0.33210 -1.1912   0.2340
+## matched2_smaller$AC_type_noSTSC -0.20005    0.31083 -0.6436   0.5201
+## 
+## 
+## t test of coefficients:
+## 
+##                                    Estimate  Std. Error t value  Pr(>|t|)    
+## (Intercept)                      1.4045e+00  6.0246e-01  2.3312 0.0200511 *  
+## matched2_smaller$AC_type_noSTSC -6.7619e-02  3.1882e-01 -0.2121 0.8321037    
+## SCpop                           -5.8277e-05  1.6982e-05 -3.4317 0.0006384 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{row.names}\NormalTok{(mymatrix)}\OtherTok{\textless{}{-}}\FunctionTok{names}\NormalTok{(devDTA[outcomeindex])}
+\FunctionTok{colnames}\NormalTok{(mymatrix)}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"Difference"}\NormalTok{, }\StringTok{"Conf.int min"}\NormalTok{, }\StringTok{"Conf.int max"}\NormalTok{, }\StringTok{"P{-}value"}\NormalTok{, }\StringTok{"Difference"}\NormalTok{, }\StringTok{"Conf.int min"}\NormalTok{, }\StringTok{"Conf.int max"}\NormalTok{, }\StringTok{"P{-}value"}\NormalTok{, }\StringTok{"Difference"}\NormalTok{, }\StringTok{"Conf.int min"}\NormalTok{, }\StringTok{"Conf.int max"}\NormalTok{, }\StringTok{"P{-}value"}\NormalTok{)}
+
+\FunctionTok{row.names}\NormalTok{(mymatrix)}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"Percentage SCs"}\NormalTok{, }\StringTok{"Literacy rate "}\NormalTok{, }\StringTok{"Employment rate "}\NormalTok{, }\StringTok{"Agricultural laborers"}\NormalTok{, }\StringTok{"Electricity in village"}\NormalTok{, }\StringTok{"School in village "}\NormalTok{,}\StringTok{"Medical facility in village"}\NormalTok{,}\StringTok{"Comm. channel in village"}\NormalTok{,}
+\StringTok{"Literacy gap"}\NormalTok{, }\StringTok{"Employment gap"}\NormalTok{, }\StringTok{"Agricultural laborers gap"}\NormalTok{,   }\StringTok{"Electricity in village gap"}\NormalTok{, }\StringTok{"School in village gap"}\NormalTok{,}\StringTok{"Medical facility in village gap"}\NormalTok{,}\StringTok{"Comm. channel in village gap"}\NormalTok{)}
+
+\NormalTok{figurematrix}\OtherTok{\textless{}{-}}\NormalTok{mymatrix[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{)]}
+\NormalTok{articlematrix}\OtherTok{\textless{}{-}}\NormalTok{mymatrix[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{,}\ConstantTok{NA}\NormalTok{, }\DecValTok{5}\NormalTok{,}\DecValTok{8}\NormalTok{,}\ConstantTok{NA}\NormalTok{, }\DecValTok{9}\NormalTok{,}\DecValTok{12}\NormalTok{)]}
+
+\FunctionTok{library}\NormalTok{(xtable)}
+\FunctionTok{xtable}\NormalTok{(articlematrix)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## % latex table generated in R 4.2.3 by xtable 1.8-4 package
+## % Sun Apr 16 23:38:45 2023
+## \begin{table}[ht]
+## \centering
+## \begin{tabular}{rrrrrrrrr}
+##   \hline
+##  & Difference & P-value & NA & Difference & P-value & NA & Difference & P-value \\ 
+##   \hline
+## Literacy rate  & -0.18 & 0.58 &  & 0.06 & 0.85 &  & 0.55 & 0.07 \\ 
+##   Employment rate  & -0.08 & 0.70 &  & -0.25 & 0.29 &  & 0.15 & 0.67 \\ 
+##   Agricultural laborers & 0.09 & 0.69 &  & -0.19 & 0.46 &  & -0.21 & 0.55 \\ 
+##   Electricity in village & -1.19 & 0.16 &  & -0.79 & 0.23 &  & 0.03 & 0.97 \\ 
+##   School in village  & -0.32 & 0.35 &  & -0.53 & 0.21 &  & -0.21 & 0.68 \\ 
+##   Medical facility in village & -0.26 & 0.53 &  & -1.03 & 0.10 &  & -0.29 & 0.64 \\ 
+##   Comm. channel in village & -0.51 & 0.50 &  & -0.34 & 0.73 &  & 0.96 & 0.30 \\ 
+##   Literacy gap & -0.03 & 0.88 &  & 0.01 & 0.96 &  & 0.38 & 0.12 \\ 
+##   Employment gap & 0.00 & 0.96 &  & -0.06 & 0.64 &  & -0.18 & 0.20 \\ 
+##   Agricultural laborers gap & 0.02 & 0.89 &  & -0.04 & 0.80 &  & -0.13 & 0.59 \\ 
+##   Electricity in village gap & 0.02 & 0.84 &  & 0.22 & 0.26 &  & 0.26 & 0.16 \\ 
+##   School in village gap & -0.06 & 0.54 &  & -0.01 & 0.92 &  & -0.04 & 0.71 \\ 
+##   Medical facility in village gap & -0.29 & 0.40 &  & 0.33 & 0.28 &  & 0.43 & 0.16 \\ 
+##   Comm. channel in village gap & -0.31 & 0.18 &  & -0.20 & 0.52 &  & -0.07 & 0.83 \\ 
+##    \hline
+## \end{tabular}
+## \end{table}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pdf}\NormalTok{(}\AttributeTok{file=}\StringTok{"Figures/Fig\_matching\_est.pdf"}\NormalTok{, }\AttributeTok{height=}\DecValTok{7}\NormalTok{, }\AttributeTok{width =}\DecValTok{7}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{1}\NormalTok{, .}\DecValTok{5}\NormalTok{))}
+
+\FunctionTok{plot}\NormalTok{(}\AttributeTok{x=}\ConstantTok{NULL}\NormalTok{,}\AttributeTok{axes=}\NormalTok{F, }\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{), }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{14}\NormalTok{),}\AttributeTok{xlab=}\StringTok{"Difference in percentage points in 2001 (SC{-}GEN)"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{""}\NormalTok{, }\AttributeTok{cex.main=}\DecValTok{2}\NormalTok{)}
+\CommentTok{\# add the 0, vertical lines}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{v=}\DecValTok{0}\NormalTok{, }\AttributeTok{lty=}\DecValTok{3}\NormalTok{)}
+\FunctionTok{axis}\NormalTok{(}\AttributeTok{side=}\DecValTok{1}\NormalTok{,}\AttributeTok{tick=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{las=}\DecValTok{1}\NormalTok{, }\AttributeTok{cex.axis=}\DecValTok{1}\NormalTok{)}
+\FunctionTok{axis}\NormalTok{(}\AttributeTok{side=}\DecValTok{2}\NormalTok{,}\AttributeTok{at=}\FunctionTok{c}\NormalTok{(}\DecValTok{14}\SpecialCharTok{:}\DecValTok{1}\NormalTok{), }\AttributeTok{labels=}\FunctionTok{row.names}\NormalTok{(figurematrix), }\AttributeTok{cex.axis=}\DecValTok{1}\NormalTok{, }\AttributeTok{las=}\DecValTok{1}\NormalTok{, }\AttributeTok{tick=}\NormalTok{F)}
+\CommentTok{\#Writing in variable names}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(figurematrix)) \{}
+\FunctionTok{arrows}\NormalTok{(}\AttributeTok{x0=}\FunctionTok{as.numeric}\NormalTok{(figurematrix[i,}\DecValTok{2}\NormalTok{]), }\AttributeTok{x1=} \FunctionTok{as.numeric}\NormalTok{(figurematrix[i,}\DecValTok{3}\NormalTok{]), }\AttributeTok{y0=}\NormalTok{(}\DecValTok{15}\SpecialCharTok{{-}}\NormalTok{i}\FloatTok{+.1}\NormalTok{), }\AttributeTok{y1=}\NormalTok{(}\DecValTok{15}\SpecialCharTok{{-}}\NormalTok{i}\FloatTok{+.1}\NormalTok{), }\AttributeTok{angle=}\DecValTok{90}\NormalTok{, }\AttributeTok{length=}\NormalTok{.}\DecValTok{025}\NormalTok{, }\AttributeTok{code=}\DecValTok{3}\NormalTok{)}
+
+\FunctionTok{arrows}\NormalTok{(}\AttributeTok{x0=}\FunctionTok{as.numeric}\NormalTok{(figurematrix[i,}\DecValTok{6}\NormalTok{]), }\AttributeTok{x1=} \FunctionTok{as.numeric}\NormalTok{(figurematrix[i,}\DecValTok{7}\NormalTok{]), }\AttributeTok{y0=}\NormalTok{(}\DecValTok{15}\SpecialCharTok{{-}}\NormalTok{i}\FloatTok{{-}.1}\NormalTok{), }\AttributeTok{y1=}\NormalTok{(}\DecValTok{15}\SpecialCharTok{{-}}\NormalTok{i}\FloatTok{{-}.1}\NormalTok{), }\AttributeTok{angle=}\DecValTok{90}\NormalTok{, }\AttributeTok{length=}\NormalTok{.}\DecValTok{025}\NormalTok{, }\AttributeTok{code=}\DecValTok{3}\NormalTok{)}
+
+\FunctionTok{points}\NormalTok{(}\AttributeTok{x=}\FunctionTok{as.numeric}\NormalTok{(figurematrix[i,}\DecValTok{1}\NormalTok{]), }\AttributeTok{y=}\DecValTok{15}\SpecialCharTok{{-}}\NormalTok{i}\FloatTok{+.1}\NormalTok{, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\NormalTok{.}\DecValTok{7}\NormalTok{)}
+
+\FunctionTok{points}\NormalTok{(}\AttributeTok{x=}\FunctionTok{as.numeric}\NormalTok{(figurematrix[i,}\DecValTok{5}\NormalTok{]), }\AttributeTok{y=}\DecValTok{15}\SpecialCharTok{{-}}\NormalTok{i}\FloatTok{{-}.1}\NormalTok{, }\AttributeTok{pch=}\DecValTok{1}\NormalTok{, }\AttributeTok{cex=}\NormalTok{.}\DecValTok{7}\NormalTok{ ,  }\AttributeTok{col=}\StringTok{"gray40"}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\AttributeTok{x=}\DecValTok{95}\NormalTok{, }\AttributeTok{y=}\NormalTok{i, figurematrix[i,}\DecValTok{4}\NormalTok{], }\AttributeTok{cex=}\NormalTok{.}\DecValTok{8}\NormalTok{)}
+
+\NormalTok{\}}
+\FunctionTok{legend}\NormalTok{(}\AttributeTok{x=}\FloatTok{2.2}\NormalTok{, }\AttributeTok{y=}\DecValTok{4}\NormalTok{, }\AttributeTok{pch=}\FunctionTok{c}\NormalTok{(}\DecValTok{19}\NormalTok{, }\DecValTok{1}\NormalTok{, }\ConstantTok{NA}\NormalTok{), }\AttributeTok{lty=}\FunctionTok{c}\NormalTok{(}\ConstantTok{NA}\NormalTok{, }\ConstantTok{NA}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{"Matching est."}\NormalTok{, }\StringTok{"Bias{-}adjusted est."}\NormalTok{, }\StringTok{"95\% conf. interval"}\NormalTok{), }\AttributeTok{cex=}\NormalTok{.}\DecValTok{9}\NormalTok{, }\AttributeTok{bg=}\StringTok{"white"}\NormalTok{, }\AttributeTok{merge=}\NormalTok{T)}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\DocumentationTok{\#\#ROBUSTNESS CHECKS ON MATCHED DATA 2 {-}{-}{-}{-}}
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+
+\DocumentationTok{\#\#\#\# Checking development variation by SC percent on}
+
+\NormalTok{PropSC}\OtherTok{\textless{}{-}}\NormalTok{matched2}\SpecialCharTok{$}\NormalTok{SC\_percent71\_true }
+\NormalTok{educ\_lag}\OtherTok{\textless{}{-}}\NormalTok{matched2}\SpecialCharTok{$}\NormalTok{Plit71\_SC}
+\NormalTok{worker\_lag}\OtherTok{\textless{}{-}}\NormalTok{matched2}\SpecialCharTok{$}\NormalTok{P\_W71\_SC }
+\NormalTok{agr\_lag}\OtherTok{\textless{}{-}}\NormalTok{matched2}\SpecialCharTok{$}\NormalTok{P\_al71\_SC}
+\NormalTok{stateFE}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{State\_no\_2001\_old)}
+
+\NormalTok{model1lm}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{Plit\_SC\_7 }\SpecialCharTok{\textasciitilde{}}\NormalTok{ matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{ PropSC)}
+\NormalTok{model3lm}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{Plit\_SC\_7 }\SpecialCharTok{\textasciitilde{}}\NormalTok{ educ\_lag }\SpecialCharTok{+}\NormalTok{matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{ PropSC }\SpecialCharTok{+}\NormalTok{ stateFE)}
+
+\NormalTok{model4lm}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{P\_W\_SC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{ PropSC)}
+\NormalTok{model6lm}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{P\_W\_SC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ worker\_lag }\SpecialCharTok{+}\NormalTok{matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{ PropSC }\SpecialCharTok{+}\NormalTok{ stateFE)}
+
+\NormalTok{model7lm}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{P\_al\_SC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{ PropSC)}
+\NormalTok{model9lm}\OtherTok{\textless{}{-}}\FunctionTok{lm}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{P\_al\_SC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ agr\_lag }\SpecialCharTok{+}\NormalTok{matched2}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{ PropSC }\SpecialCharTok{+}\NormalTok{ stateFE)}
+
+\FunctionTok{summary}\NormalTok{(model1lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = matched2$Plit_SC_7 ~ matched2$AC_type_noST * PropSC)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -37.910  -8.866   0.495   9.818  39.682 
+## 
+## Coefficients:
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                    58.909727   2.464658  23.902  < 2e-16 ***
+## matched2$AC_type_noSTSC         0.560746   3.578955   0.157  0.87555    
+## PropSC                         -0.329822   0.115755  -2.849  0.00452 ** 
+## matched2$AC_type_noSTSC:PropSC  0.005235   0.162562   0.032  0.97432    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 14.49 on 644 degrees of freedom
+## Multiple R-squared:  0.02458,    Adjusted R-squared:  0.02004 
+## F-statistic: 5.411 on 3 and 644 DF,  p-value: 0.001111
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(model3lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = matched2$Plit_SC_7 ~ educ_lag + matched2$AC_type_noST * 
+##     PropSC + stateFE)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -21.157  -4.062   0.337   4.133  23.805 
+## 
+## Coefficients:
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                     47.68030    2.29582  20.768  < 2e-16 ***
+## educ_lag                         1.09552    0.03926  27.904  < 2e-16 ***
+## matched2$AC_type_noSTSC          1.30160    1.56429   0.832 0.405685    
+## PropSC                           0.07411    0.06217   1.192 0.233672    
+## stateFE3                       -11.25719    1.89752  -5.933 4.92e-09 ***
+## stateFE6                        -7.11639    2.02775  -3.510 0.000481 ***
+## stateFE8                        -7.13261    1.85831  -3.838 0.000136 ***
+## stateFE9                       -14.60536    1.72524  -8.466  < 2e-16 ***
+## stateFE10                      -26.32488    1.84765 -14.248  < 2e-16 ***
+## stateFE19                      -13.25590    1.87986  -7.052 4.68e-12 ***
+## stateFE21                      -10.61778    1.95805  -5.423 8.38e-08 ***
+## stateFE23                       -3.20767    1.85498  -1.729 0.084260 .  
+## stateFE24                       -6.35283    2.26169  -2.809 0.005126 ** 
+## stateFE27                       -6.03245    2.06953  -2.915 0.003685 ** 
+## stateFE28                       -8.98862    1.86805  -4.812 1.87e-06 ***
+## stateFE29                      -12.41599    1.86470  -6.658 6.04e-11 ***
+## stateFE32                       -7.82763    2.32825  -3.362 0.000821 ***
+## stateFE33                      -10.68048    1.90847  -5.596 3.27e-08 ***
+## matched2$AC_type_noSTSC:PropSC  -0.06347    0.07106  -0.893 0.372084    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 6.327 on 629 degrees of freedom
+## Multiple R-squared:  0.8182, Adjusted R-squared:  0.813 
+## F-statistic: 157.3 on 18 and 629 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(model4lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = matched2$P_W_SC ~ matched2$AC_type_noST * PropSC)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -16.3140  -5.5672   0.0685   5.0003  18.4371 
+## 
+## Coefficients:
+##                                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                    45.434237   1.245107  36.490   <2e-16 ***
+## matched2$AC_type_noSTSC        -0.111983   1.808032  -0.062   0.9506    
+## PropSC                         -0.150605   0.058478  -2.575   0.0102 *  
+## matched2$AC_type_noSTSC:PropSC  0.001094   0.082124   0.013   0.9894    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 7.318 on 644 degrees of freedom
+## Multiple R-squared:  0.02076,    Adjusted R-squared:  0.0162 
+## F-statistic: 4.551 on 3 and 644 DF,  p-value: 0.003637
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(model6lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = matched2$P_W_SC ~ worker_lag + matched2$AC_type_noST * 
+##     PropSC + stateFE)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -16.7733  -2.9983  -0.1349   2.9117  17.5692 
+## 
+## Coefficients:
+##                                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                    26.69078    2.03114  13.141  < 2e-16 ***
+## worker_lag                      0.53274    0.03518  15.142  < 2e-16 ***
+## matched2$AC_type_noSTSC        -1.17650    1.13345  -1.038 0.299678    
+## PropSC                          0.03171    0.04501   0.705 0.481343    
+## stateFE3                       -4.75608    1.42890  -3.328 0.000924 ***
+## stateFE6                       -2.87218    1.52940  -1.878 0.060847 .  
+## stateFE8                       -2.35806    1.33482  -1.767 0.077784 .  
+## stateFE9                       -9.84550    1.25312  -7.857 1.71e-14 ***
+## stateFE10                      -8.03131    1.29122  -6.220 9.07e-10 ***
+## stateFE19                      -2.14583    1.41035  -1.521 0.128640    
+## stateFE21                      -5.75757    1.43074  -4.024 6.41e-05 ***
+## stateFE23                      -4.96050    1.32885  -3.733 0.000206 ***
+## stateFE24                      -2.82026    1.63815  -1.722 0.085631 .  
+## stateFE27                      -4.11632    1.49685  -2.750 0.006131 ** 
+## stateFE28                      -3.03206    1.39954  -2.166 0.030651 *  
+## stateFE29                      -1.12084    1.34246  -0.835 0.404082    
+## stateFE32                      -9.38962    1.60998  -5.832 8.75e-09 ***
+## stateFE33                       0.03777    1.38459   0.027 0.978248    
+## matched2$AC_type_noSTSC:PropSC  0.03870    0.05149   0.752 0.452584    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 4.583 on 629 degrees of freedom
+## Multiple R-squared:  0.6249, Adjusted R-squared:  0.6142 
+## F-statistic: 58.22 on 18 and 629 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(model7lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = matched2$P_al_SC ~ matched2$AC_type_noST * PropSC)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -22.200  -8.574   0.109   7.922  30.049 
+## 
+## Coefficients:
+##                                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                    24.26802    1.85648  13.072   <2e-16 ***
+## matched2$AC_type_noSTSC         0.26173    2.69581   0.097   0.9227    
+## PropSC                         -0.17074    0.08719  -1.958   0.0506 .  
+## matched2$AC_type_noSTSC:PropSC -0.01463    0.12245  -0.119   0.9050    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 10.91 on 644 degrees of freedom
+## Multiple R-squared:  0.0132, Adjusted R-squared:  0.008601 
+## F-statistic: 2.871 on 3 and 644 DF,  p-value: 0.0357
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(model9lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = matched2$P_al_SC ~ agr_lag + matched2$AC_type_noST * 
+##     PropSC + stateFE)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -25.7891  -3.2538  -0.0316   3.1487  15.1374 
+## 
+## Coefficients:
+##                                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                    -4.04264    1.81806  -2.224 0.026530 *  
+## agr_lag                         0.32309    0.01290  25.050  < 2e-16 ***
+## matched2$AC_type_noSTSC        -0.76085    1.32710  -0.573 0.566638    
+## PropSC                          0.10783    0.05260   2.050 0.040762 *  
+## stateFE3                       -3.29204    1.72272  -1.911 0.056466 .  
+## stateFE6                        2.24292    1.79104   1.252 0.210926    
+## stateFE8                        4.20608    1.55140   2.711 0.006888 ** 
+## stateFE9                        3.17179    1.49092   2.127 0.033774 *  
+## stateFE10                       6.74641    1.74146   3.874 0.000118 ***
+## stateFE19                       6.03041    1.67830   3.593 0.000352 ***
+## stateFE21                       4.97584    1.74751   2.847 0.004552 ** 
+## stateFE23                       6.32985    1.61402   3.922 9.76e-05 ***
+## stateFE24                       6.70616    2.01659   3.326 0.000934 ***
+## stateFE27                       7.67361    1.87807   4.086 4.96e-05 ***
+## stateFE28                      14.91100    1.74618   8.539  < 2e-16 ***
+## stateFE29                       7.56983    1.64832   4.592 5.29e-06 ***
+## stateFE32                      -5.97689    2.03543  -2.936 0.003441 ** 
+## stateFE33                      11.97412    1.73658   6.895 1.31e-11 ***
+## matched2$AC_type_noSTSC:PropSC  0.02083    0.06028   0.346 0.729782    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 5.368 on 629 degrees of freedom
+## Multiple R-squared:  0.7667, Adjusted R-squared:   0.76 
+## F-statistic: 114.8 on 18 and 629 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model1lm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model1lm, }\AttributeTok{data=}\NormalTok{matched2, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value  Pr(>|t|)    
+## (Intercept)                    58.9097269  7.6914892  7.6591 6.893e-14 ***
+## matched2$AC_type_noSTSC         0.5607459  1.1570807  0.4846    0.6281    
+## PropSC                         -0.3298221  0.2742533 -1.2026    0.2296    
+## matched2$AC_type_noSTSC:PropSC  0.0052355  0.0617145  0.0848    0.9324    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model3lm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model3lm, }\AttributeTok{data=}\NormalTok{matched2, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error  t value  Pr(>|t|)    
+## (Intercept)                     47.680299   3.309388  14.4076 < 2.2e-16 ***
+## educ_lag                         1.095519   0.149943   7.3062 8.360e-13 ***
+## matched2$AC_type_noSTSC          1.301600   1.259291   1.0336 0.3017217    
+## PropSC                           0.074109   0.080488   0.9208 0.3575331    
+## stateFE3                       -11.257189   0.524109 -21.4787 < 2.2e-16 ***
+## stateFE6                        -7.116386   0.760652  -9.3556 < 2.2e-16 ***
+## stateFE8                        -7.132610   1.396025  -5.1092 4.295e-07 ***
+## stateFE9                       -14.605363   1.181051 -12.3664 < 2.2e-16 ***
+## stateFE10                      -26.324876   1.780520 -14.7849 < 2.2e-16 ***
+## stateFE19                      -13.255903   0.768375 -17.2519 < 2.2e-16 ***
+## stateFE21                      -10.617779   0.552430 -19.2201 < 2.2e-16 ***
+## stateFE23                       -3.207672   1.058886  -3.0293 0.0025518 ** 
+## stateFE24                       -6.352832   1.814031  -3.5021 0.0004944 ***
+## stateFE27                       -6.032452   1.484944  -4.0624 5.471e-05 ***
+## stateFE28                       -8.988618   1.500590  -5.9901 3.530e-09 ***
+## stateFE29                      -12.415993   0.906725 -13.6932 < 2.2e-16 ***
+## stateFE32                       -7.827632   3.340724  -2.3431 0.0194352 *  
+## stateFE33                      -10.680482   0.501738 -21.2870 < 2.2e-16 ***
+## matched2$AC_type_noSTSC:PropSC  -0.063467   0.055979  -1.1338 0.2573191    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model4lm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model4lm, }\AttributeTok{data=}\NormalTok{matched2, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## t test of coefficients:
+## 
+##                                  Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                    45.4342371  2.6228861 17.3222   <2e-16 ***
+## matched2$AC_type_noSTSC        -0.1119827  0.8773296 -0.1276   0.8985    
+## PropSC                         -0.1506047  0.1075296 -1.4006   0.1618    
+## matched2$AC_type_noSTSC:PropSC  0.0010942  0.0411721  0.0266   0.9788    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model6lm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model6lm, }\AttributeTok{data=}\NormalTok{matched2, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error  t value  Pr(>|t|)    
+## (Intercept)                    26.690781   2.751611   9.7001 < 2.2e-16 ***
+## worker_lag                      0.532743   0.082936   6.4235 2.628e-10 ***
+## matched2$AC_type_noSTSC        -1.176502   0.701140  -1.6780  0.093847 .  
+## PropSC                          0.031712   0.048360   0.6557  0.512228    
+## stateFE3                       -4.756078   1.010606  -4.7062 3.106e-06 ***
+## stateFE6                       -2.872177   1.020276  -2.8151  0.005029 ** 
+## stateFE8                       -2.358065   0.475488  -4.9593 9.115e-07 ***
+## stateFE9                       -9.845503   0.571885 -17.2159 < 2.2e-16 ***
+## stateFE10                      -8.031309   0.281300 -28.5507 < 2.2e-16 ***
+## stateFE19                      -2.145827   0.999348  -2.1472  0.032157 *  
+## stateFE21                      -5.757567   0.449893 -12.7976 < 2.2e-16 ***
+## stateFE23                      -4.960502   0.301003 -16.4799 < 2.2e-16 ***
+## stateFE24                      -2.820264   0.643108  -4.3854 1.357e-05 ***
+## stateFE27                      -4.116319   0.635364  -6.4787 1.868e-10 ***
+## stateFE28                      -3.032056   1.250085  -2.4255  0.015569 *  
+## stateFE29                      -1.120842   0.370495  -3.0253  0.002586 ** 
+## stateFE32                      -9.389620   0.794681 -11.8156 < 2.2e-16 ***
+## stateFE33                       0.037766   0.314107   0.1202  0.904336    
+## matched2$AC_type_noSTSC:PropSC  0.038697   0.035210   1.0990  0.272168    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model7lm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model7lm, }\AttributeTok{data=}\NormalTok{matched2, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value  Pr(>|t|)    
+## (Intercept)                    24.268024   4.464795  5.4354 7.765e-08 ***
+## matched2$AC_type_noSTSC         0.261725   1.191643  0.2196    0.8262    
+## PropSC                         -0.170739   0.164482 -1.0380    0.2996    
+## matched2$AC_type_noSTSC:PropSC -0.014625   0.062226 -0.2350    0.8143    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model9lm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model9lm, }\AttributeTok{data=}\NormalTok{matched2, }\AttributeTok{cluster=}\StringTok{"State\_no\_2001\_old"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## t test of coefficients:
+## 
+##                                 Estimate Std. Error t value  Pr(>|t|)    
+## (Intercept)                    -4.042640   1.854141 -2.1803 0.0296029 *  
+## agr_lag                         0.323092   0.023109 13.9812 < 2.2e-16 ***
+## matched2$AC_type_noSTSC        -0.760846   0.798430 -0.9529 0.3409926    
+## PropSC                          0.107833   0.077334  1.3944 0.1636957    
+## stateFE3                       -3.292037   1.117420 -2.9461 0.0033371 ** 
+## stateFE6                        2.242916   0.991574  2.2620 0.0240394 *  
+## stateFE8                        4.206084   0.475435  8.8468 < 2.2e-16 ***
+## stateFE9                        3.171794   0.694118  4.5695 5.885e-06 ***
+## stateFE10                       6.746405   1.646992  4.0962 4.749e-05 ***
+## stateFE19                       6.030405   0.993257  6.0713 2.194e-09 ***
+## stateFE21                       4.975842   1.079973  4.6074 4.938e-06 ***
+## stateFE23                       6.329847   0.867567  7.2961 8.961e-13 ***
+## stateFE24                       6.706162   1.627487  4.1206 4.285e-05 ***
+## stateFE27                       7.673614   1.578153  4.8624 1.467e-06 ***
+## stateFE28                      14.910999   1.576745  9.4568 < 2.2e-16 ***
+## stateFE29                       7.569828   1.057918  7.1554 2.331e-12 ***
+## stateFE32                      -5.976887   1.720236 -3.4745 0.0005471 ***
+## stateFE33                      11.974119   1.167866 10.2530 < 2.2e-16 ***
+## matched2$AC_type_noSTSC:PropSC  0.020830   0.041190  0.5057 0.6132381    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(apsrtable)}
+\NormalTok{table\_OLS}\OtherTok{\textless{}{-}}\FunctionTok{apsrtable}\NormalTok{(model1lm, model3lm, model4lm, model6lm, model7lm, model9lm, }\AttributeTok{se=}\StringTok{"robust"}\NormalTok{, }\AttributeTok{omitcoef=}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\SpecialCharTok{:}\DecValTok{19}\NormalTok{),  }\AttributeTok{coef.names=}\FunctionTok{c}\NormalTok{(}\StringTok{"Intercept"}\NormalTok{, }\StringTok{"SC reserved"}\NormalTok{, }\StringTok{"Percentage SC"}\NormalTok{, }\StringTok{"SC reserved * Percentage SC"}\NormalTok{, }\StringTok{"Literacy SC in 1971"}\NormalTok{, }\StringTok{"Worker SC in 1971"}\NormalTok{, }\StringTok{"Agr. laborer SC in 1971"}\NormalTok{))}
+
+\CommentTok{\# Table 4 {-}{-}{-}{-}}
+\NormalTok{table\_OLS}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## \begin{table}[!ht]
+## \caption{}
+## \label{} 
+## \begin{tabular}{ l D{.}{.}{2}D{.}{.}{2}D{.}{.}{2}D{.}{.}{2}D{.}{.}{2}D{.}{.}{2} } 
+## \hline 
+##   & \multicolumn{ 1 }{ c }{ Model 1 } & \multicolumn{ 1 }{ c }{ Model 2 } & \multicolumn{ 1 }{ c }{ Model 3 } & \multicolumn{ 1 }{ c }{ Model 4 } & \multicolumn{ 1 }{ c }{ Model 5 } & \multicolumn{ 1 }{ c }{ Model 6 } \\ \hline
+##  %                           & Model 1  & Model 2  & Model 3  & Model 4  & Model 5  & Model 6 \\ 
+## Intercept                   & 58.91 ^* & 47.68 ^* & 45.43 ^* & 26.69 ^* & 24.27 ^* & -4.04 ^*\\ 
+##                             & (7.69)   & (3.31)   & (2.62)   & (2.75)   & (4.46)   & (1.85)  \\ 
+## SC reserved                 & 0.56     & 1.30     & -0.11    & -1.18    & 0.26     & -0.76   \\ 
+##                             & (1.16)   & (1.26)   & (0.88)   & (0.70)   & (1.19)   & (0.80)  \\ 
+## Percentage SC               & -0.33    & 0.07     & -0.15    & 0.03     & -0.17    & 0.11    \\ 
+##                             & (0.27)   & (0.08)   & (0.11)   & (0.05)   & (0.16)   & (0.08)  \\ 
+## SC reserved * Percentage SC & 0.01     & -0.06    & 0.00     & 0.04     & -0.01    & 0.02    \\ 
+##                             & (0.06)   & (0.06)   & (0.04)   & (0.04)   & (0.06)   & (0.04)  \\ 
+## Literacy SC in 1971         &          & 1.10 ^*  &          &          &          &         \\ 
+##                             &          & (0.15)   &          &          &          &         \\ 
+## Worker SC in 1971           &          &          &          & 0.53 ^*  &          &         \\ 
+##                             &          &          &          & (0.08)   &          &         \\ 
+## Agr. laborer SC in 1971     &          &          &          &          &          & 0.32 ^* \\ 
+##                             &          &          &          &          &          & (0.02)   \\
+##  $N$                         & 648      & 648      & 648      & 648      & 648      & 648     \\ 
+## $R^2$                       & 0.02     & 0.82     & 0.02     & 0.62     & 0.01     & 0.77    \\ 
+## adj. $R^2$                  & 0.02     & 0.81     & 0.02     & 0.61     & 0.01     & 0.76    \\ 
+## Resid. sd                   & 14.49    & 6.33     & 7.32     & 4.58     & 10.91    & 5.37     \\ \hline
+##  \multicolumn{7}{l}{\footnotesize{Robust standard errors in parentheses}}\\
+## \multicolumn{7}{l}{\footnotesize{$^*$ indicates significance at $p< 0.05 $}} 
+## \end{tabular} 
+##  \end{table}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Look at within constituency patterns {-}{-}{-}{-}}
+
+\CommentTok{\#load full village dataset}
+\FunctionTok{load}\NormalTok{(}\StringTok{"data}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Vill\_AC.RData"}\NormalTok{)}
+\FunctionTok{dim}\NormalTok{(vill\_con) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 634919     21
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(vill\_con)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "VD01_state_id"          "VD01_district_id"       "VD01_village_id"       
+##  [4] "VD01_uniqueAC"          "VD01_state_name"        "VD01_AC_id"            
+##  [7] "VD01_AC_name"           "VD01_t_p"               "VD01_sc_p"             
+## [10] "VD01_power_supl"        "VD01_power_supl_pop"    "VD01_power_supl_sc_pop"
+## [13] "VD01_educ"              "VD01_educ_pop"          "VD01_educ_sc_pop"      
+## [16] "VD01_medic"             "VD01_medic_pop"         "VD01_medic_sc_pop"     
+## [19] "VD01_comm"              "VD01_comm_pop"          "VD01_comm_SC_pop"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vill\_con}\SpecialCharTok{$}\NormalTok{VD01\_state\_id}\OtherTok{\textless{}{-}}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(vill\_con}\SpecialCharTok{$}\NormalTok{VD01\_state\_id))}
+\FunctionTok{summary}\NormalTok{(vill\_con}\SpecialCharTok{$}\NormalTok{VD01\_state\_id)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    1.00    9.00   19.00   16.88   23.00   35.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(vill\_con}\SpecialCharTok{$}\NormalTok{VD01\_AC\_id)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##     1.0    43.0    95.0   113.2   171.0   403.0   62233
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{State\_number\_2001)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    2.00    9.00   19.00   17.49   28.00   33.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(matched2}\SpecialCharTok{$}\NormalTok{AC\_no\_2001)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     1.0    47.0   103.0   122.3   185.2   396.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# reducde to ACs that are in matched2}
+\NormalTok{vill}\OtherTok{\textless{}{-}}\FunctionTok{merge}\NormalTok{(vill\_con, matched2[,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\DecValTok{28}\NormalTok{)], }\AttributeTok{by.x=}\FunctionTok{c}\NormalTok{(}\StringTok{"VD01\_state\_id"}\NormalTok{, }\StringTok{"VD01\_AC\_id"}\NormalTok{), }\AttributeTok{by.y=}\FunctionTok{c}\NormalTok{(}\StringTok{"State\_number\_2001"}\NormalTok{, }\StringTok{"AC\_no\_2001"}\NormalTok{))}
+
+\FunctionTok{names}\NormalTok{(vill)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "VD01_state_id"          "VD01_AC_id"             "VD01_district_id"      
+##  [4] "VD01_village_id"        "VD01_uniqueAC"          "VD01_state_name"       
+##  [7] "VD01_AC_name"           "VD01_t_p"               "VD01_sc_p"             
+## [10] "VD01_power_supl"        "VD01_power_supl_pop"    "VD01_power_supl_sc_pop"
+## [13] "VD01_educ"              "VD01_educ_pop"          "VD01_educ_sc_pop"      
+## [16] "VD01_medic"             "VD01_medic_pop"         "VD01_medic_sc_pop"     
+## [19] "VD01_comm"              "VD01_comm_pop"          "VD01_comm_SC_pop"      
+## [22] "AC_type_noST"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(vill)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 112199     22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PropSC\_vill}\OtherTok{\textless{}{-}}\NormalTok{(}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_sc\_p))}\SpecialCharTok{/}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_t\_p)))}
+\NormalTok{states}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_state\_id)}
+
+\NormalTok{model1glm}\OtherTok{\textless{}{-}}\FunctionTok{glm}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_power\_supl }\SpecialCharTok{\textasciitilde{}}\NormalTok{ vill}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{PropSC\_vill }\SpecialCharTok{+}\FunctionTok{as.factor}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_state\_id), }\AttributeTok{family=}\FunctionTok{binomial}\NormalTok{(}\AttributeTok{link =} \StringTok{"logit"}\NormalTok{))}
+
+\NormalTok{model2glm}\OtherTok{\textless{}{-}}\FunctionTok{glm}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_educ }\SpecialCharTok{\textasciitilde{}}\NormalTok{ vill}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{PropSC\_vill }\SpecialCharTok{+}\FunctionTok{as.factor}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_state\_id), }\AttributeTok{family=}\FunctionTok{binomial}\NormalTok{(}\AttributeTok{link =} \StringTok{"logit"}\NormalTok{))}
+
+\NormalTok{model3glm}\OtherTok{\textless{}{-}}\FunctionTok{glm}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_medic }\SpecialCharTok{\textasciitilde{}}\NormalTok{ vill}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{PropSC\_vill }\SpecialCharTok{+}\FunctionTok{as.factor}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_state\_id), }\AttributeTok{family=}\FunctionTok{binomial}\NormalTok{(}\AttributeTok{link =} \StringTok{"logit"}\NormalTok{))}
+
+\NormalTok{model4glm}\OtherTok{\textless{}{-}}\FunctionTok{glm}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_comm }\SpecialCharTok{\textasciitilde{}}\NormalTok{ vill}\SpecialCharTok{$}\NormalTok{AC\_type\_noST}\SpecialCharTok{*}\NormalTok{PropSC\_vill }\SpecialCharTok{+}\FunctionTok{as.factor}\NormalTok{(vill}\SpecialCharTok{$}\NormalTok{VD01\_state\_id), }\AttributeTok{family=}\FunctionTok{binomial}\NormalTok{(}\AttributeTok{link =} \StringTok{"logit"}\NormalTok{))}
+
+\DocumentationTok{\#\#Try to cluster errors by AC, district, and state}
+\CommentTok{\#SEs clustered at state level. Remove \# to check clustered at other levels}
+\CommentTok{\#cluster\textless{}{-}"VD01\_uniqueAC"}
+\CommentTok{\#vill$VD01\_district\_unique\textless{}{-}paste(vill$VD01\_state\_id, "{-}", vill$VD01\_district\_id, sep="")}
+\CommentTok{\#cluster\textless{}{-}"VD01\_district\_unique"}
+\NormalTok{cluster}\OtherTok{\textless{}{-}}\StringTok{"VD01\_state\_id"}
+
+\NormalTok{model1glm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model1glm, }\AttributeTok{data=}\NormalTok{vill, }\AttributeTok{cluster=}\NormalTok{cluster)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## z test of coefficients:
+## 
+##                                   Estimate Std. Error   z value Pr(>|z|)    
+## (Intercept)                      5.7029678  0.0862157   66.1477   <2e-16 ***
+## vill$AC_type_noSTSC             -0.0600244  0.1210623   -0.4958   0.6200    
+## PropSC_vill                      0.0206264  0.3028431    0.0681   0.9457    
+## as.factor(vill$VD01_state_id)3  12.8872926  1.0313266   12.4958   <2e-16 ***
+## as.factor(vill$VD01_state_id)6  -0.0432865  0.0028154  -15.3749   <2e-16 ***
+## as.factor(vill$VD01_state_id)8  -4.1396504  0.0059577 -694.8391   <2e-16 ***
+## as.factor(vill$VD01_state_id)9  -4.7716289  0.0090321 -528.2966   <2e-16 ***
+## as.factor(vill$VD01_state_id)10 -6.1499940  0.0072000 -854.1613   <2e-16 ***
+## as.factor(vill$VD01_state_id)19 -4.1709620  0.0330096 -126.3558   <2e-16 ***
+## as.factor(vill$VD01_state_id)20 -6.9302188  0.0126538 -547.6786   <2e-16 ***
+## as.factor(vill$VD01_state_id)21 -4.3552076  0.0104872 -415.2882   <2e-16 ***
+## as.factor(vill$VD01_state_id)22 -1.7306215  0.0079693 -217.1616   <2e-16 ***
+## as.factor(vill$VD01_state_id)23 -2.7271934  0.0119874 -227.5049   <2e-16 ***
+## as.factor(vill$VD01_state_id)24 -0.6605781  0.0389452  -16.9617   <2e-16 ***
+## as.factor(vill$VD01_state_id)27 -0.4212124  0.0259223  -16.2490   <2e-16 ***
+## as.factor(vill$VD01_state_id)28  2.9286151  0.0064767  452.1777   <2e-16 ***
+## as.factor(vill$VD01_state_id)29 12.8857977  1.0308779   12.4998   <2e-16 ***
+## as.factor(vill$VD01_state_id)32 12.8866628  1.0313188   12.4953   <2e-16 ***
+## as.factor(vill$VD01_state_id)33 -1.3250020  0.0125554 -105.5323   <2e-16 ***
+## vill$AC_type_noSTSC:PropSC_vill  0.0098560  0.1442078    0.0683   0.9455    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model2glm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model2glm, }\AttributeTok{data=}\NormalTok{vill, }\AttributeTok{cluster=}\NormalTok{cluster)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## z test of coefficients:
+## 
+##                                   Estimate Std. Error  z value Pr(>|z|)    
+## (Intercept)                      0.1059473  0.0719130   1.4733   0.1407    
+## vill$AC_type_noSTSC             -0.0326990  0.0607437  -0.5383   0.5904    
+## PropSC_vill                      0.3291166  0.2829057   1.1633   0.2447    
+## as.factor(vill$VD01_state_id)3   2.4394902  0.0302114  80.7473   <2e-16 ***
+## as.factor(vill$VD01_state_id)6   2.2942097  0.0046590 492.4232   <2e-16 ***
+## as.factor(vill$VD01_state_id)8   1.4205089  0.0057208 248.3055   <2e-16 ***
+## as.factor(vill$VD01_state_id)9   0.6783883  0.0062673 108.2429   <2e-16 ***
+## as.factor(vill$VD01_state_id)10  0.8231318  0.0091786  89.6794   <2e-16 ***
+## as.factor(vill$VD01_state_id)19  1.4826089  0.0278736  53.1905   <2e-16 ***
+## as.factor(vill$VD01_state_id)20  0.1222433  0.0127393   9.5958   <2e-16 ***
+## as.factor(vill$VD01_state_id)21  1.0453969  0.0129474  80.7419   <2e-16 ***
+## as.factor(vill$VD01_state_id)22  3.5075326  0.0093558 374.9030   <2e-16 ***
+## as.factor(vill$VD01_state_id)23  1.4676576  0.0143335 102.3932   <2e-16 ***
+## as.factor(vill$VD01_state_id)24  4.2762853  0.0415175 102.9996   <2e-16 ***
+## as.factor(vill$VD01_state_id)27  4.3745987  0.0285979 152.9691   <2e-16 ***
+## as.factor(vill$VD01_state_id)28  3.5373186  0.0079875 442.8559   <2e-16 ***
+## as.factor(vill$VD01_state_id)29  1.2733355  0.0036257 351.1924   <2e-16 ***
+## as.factor(vill$VD01_state_id)32  3.4152035  0.0320768 106.4697   <2e-16 ***
+## as.factor(vill$VD01_state_id)33  1.8197861  0.0095827 189.9032   <2e-16 ***
+## vill$AC_type_noSTSC:PropSC_vill -0.0551904  0.1412252  -0.3908   0.6959    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model3glm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model3glm, }\AttributeTok{data=}\NormalTok{vill, }\AttributeTok{cluster=}\NormalTok{cluster)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## z test of coefficients:
+## 
+##                                    Estimate  Std. Error   z value Pr(>|z|)    
+## (Intercept)                     -1.24989555  0.03224273  -38.7652   <2e-16 ***
+## vill$AC_type_noSTSC             -0.05064911  0.03898904   -1.2991   0.1939    
+## PropSC_vill                     -0.15404001  0.14114736   -1.0913   0.2751    
+## as.factor(vill$VD01_state_id)3   1.24720294  0.01308383   95.3240   <2e-16 ***
+## as.factor(vill$VD01_state_id)6   1.22874377  0.00096729 1270.2965   <2e-16 ***
+## as.factor(vill$VD01_state_id)8   0.37790656  0.00160955  234.7895   <2e-16 ***
+## as.factor(vill$VD01_state_id)9   0.24746729  0.00340108   72.7615   <2e-16 ***
+## as.factor(vill$VD01_state_id)10 -0.42223745  0.00313770 -134.5691   <2e-16 ***
+## as.factor(vill$VD01_state_id)19  1.52492539  0.01379408  110.5492   <2e-16 ***
+## as.factor(vill$VD01_state_id)20 -1.03756209  0.00528863 -196.1872   <2e-16 ***
+## as.factor(vill$VD01_state_id)21 -0.43046673  0.00435865  -98.7615   <2e-16 ***
+## as.factor(vill$VD01_state_id)22  0.59820123  0.00287768  207.8761   <2e-16 ***
+## as.factor(vill$VD01_state_id)23  0.21349583  0.00480506   44.4314   <2e-16 ***
+## as.factor(vill$VD01_state_id)24  1.95759892  0.01582398  123.7109   <2e-16 ***
+## as.factor(vill$VD01_state_id)27  1.15900156  0.01040683  111.3693   <2e-16 ***
+## as.factor(vill$VD01_state_id)28  1.77190384  0.00211413  838.1230   <2e-16 ***
+## as.factor(vill$VD01_state_id)29  0.56434481  0.00154262  365.8357   <2e-16 ***
+## as.factor(vill$VD01_state_id)32  3.50481215  0.01226104  285.8496   <2e-16 ***
+## as.factor(vill$VD01_state_id)33  2.67213122  0.00602169  443.7514   <2e-16 ***
+## vill$AC_type_noSTSC:PropSC_vill  0.09152628  0.11857757    0.7719   0.4402    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model4glm}\SpecialCharTok{$}\NormalTok{se}\OtherTok{\textless{}{-}}\FunctionTok{clusterSE}\NormalTok{(model4glm, }\AttributeTok{data=}\NormalTok{vill, }\AttributeTok{cluster=}\NormalTok{cluster)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## z test of coefficients:
+## 
+##                                   Estimate Std. Error   z value Pr(>|z|)    
+## (Intercept)                      0.5562892  0.0453550   12.2652   <2e-16 ***
+## vill$AC_type_noSTSC              0.0431780  0.0384893    1.1218   0.2619    
+## PropSC_vill                      0.0273512  0.1473380    0.1856   0.8527    
+## as.factor(vill$VD01_state_id)3   1.0583908  0.0175498   60.3079   <2e-16 ***
+## as.factor(vill$VD01_state_id)6   0.3472942  0.0015365  226.0235   <2e-16 ***
+## as.factor(vill$VD01_state_id)8  -0.5187060  0.0031477 -164.7868   <2e-16 ***
+## as.factor(vill$VD01_state_id)9  -1.2664605  0.0037169 -340.7343   <2e-16 ***
+## as.factor(vill$VD01_state_id)10 -1.7793636  0.0042549 -418.1956   <2e-16 ***
+## as.factor(vill$VD01_state_id)19 -0.9232676  0.0160318  -57.5897   <2e-16 ***
+## as.factor(vill$VD01_state_id)20 -2.6010720  0.0069797 -372.6641   <2e-16 ***
+## as.factor(vill$VD01_state_id)21 -1.1890861  0.0062888 -189.0790   <2e-16 ***
+## as.factor(vill$VD01_state_id)22 -1.4514360  0.0030240 -479.9782   <2e-16 ***
+## as.factor(vill$VD01_state_id)23 -1.2595757  0.0071296 -176.6677   <2e-16 ***
+## as.factor(vill$VD01_state_id)24  1.1454687  0.0222014   51.5945   <2e-16 ***
+## as.factor(vill$VD01_state_id)27 -0.1333020  0.0153649   -8.6757   <2e-16 ***
+## as.factor(vill$VD01_state_id)28  0.4946563  0.0042002  117.7709   <2e-16 ***
+## as.factor(vill$VD01_state_id)29 -0.0547076  0.0024748  -22.1055   <2e-16 ***
+## as.factor(vill$VD01_state_id)32  4.7854213  0.0184858  258.8708   <2e-16 ***
+## as.factor(vill$VD01_state_id)33  1.4613242  0.0063700  229.4080   <2e-16 ***
+## vill$AC_type_noSTSC:PropSC_vill -0.0450961  0.0545439   -0.8268   0.4084    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(apsrtable)}
+\NormalTok{table\_logit}\OtherTok{\textless{}{-}}\FunctionTok{apsrtable}\NormalTok{(model1glm, model2glm, model3glm , model4glm, }\AttributeTok{se=}\StringTok{"both"}\NormalTok{, }\AttributeTok{stars=}\DecValTok{1}\NormalTok{, }\AttributeTok{omitcoef=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\SpecialCharTok{:}\DecValTok{19}\NormalTok{), }\AttributeTok{coef.names=}\FunctionTok{c}\NormalTok{(}\StringTok{"Intercept"}\NormalTok{, }\StringTok{"SC reserved"}\NormalTok{, }\StringTok{"Proportion SC"}\NormalTok{, }\StringTok{"SC reserved * Proportion SC"}\NormalTok{))}
+
+\CommentTok{\# Table 5 {-}{-}{-}{-}}
+\NormalTok{table\_logit}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## \begin{table}[!ht]
+## \caption{}
+## \label{} 
+## \begin{tabular}{ l D{.}{.}{2}D{.}{.}{2}D{.}{.}{2}D{.}{.}{2} } 
+## \hline 
+##   & \multicolumn{ 1 }{ c }{ Model 1 } & \multicolumn{ 1 }{ c }{ Model 2 } & \multicolumn{ 1 }{ c }{ Model 3 } & \multicolumn{ 1 }{ c }{ Model 4 } \\ \hline
+##  %                           & Model 1       & Model 2       & Model 3       & Model 4      \\ 
+## Intercept                   & 5.70 ^*       & 0.11          & -1.25 ^*      & 0.56 ^*      \\ 
+##                             & (0.09) [0.26] & (0.07) [0.03] & (0.03) [0.04] & (0.05) [0.03]\\ 
+## SC reserved                 & -0.06         & -0.03         & -0.05         & 0.04         \\ 
+##                             & (0.12) [0.03] & (0.06) [0.02] & (0.04) [0.02] & (0.04) [0.02]\\ 
+## Proportion SC               & 0.02          & 0.33          & -0.15         & 0.03         \\ 
+##                             & (0.30) [0.06] & (0.28) [0.05] & (0.14) [0.05] & (0.15) [0.04]\\ 
+## SC reserved * Proportion SC & 0.01          & -0.06         & 0.09          & -0.05        \\ 
+##                             & (0.14) [0.08] & (0.14) [0.07] & (0.12) [0.06] & (0.05) [0.06] \\
+##  $N$                         & 112094        & 112192        & 112192        & 112192       \\ 
+## AIC                         & 82213.82      & 106826.64     & 125768.34     & 135440.02    \\ 
+## BIC                         & 82983.99      & 107596.87     & 126538.58     & 136210.26    \\ 
+## $\log L$                   & -41026.91     & -53333.32     & -62804.17     & -67640.01     \\ \hline
+##  \multicolumn{5}{l}{\footnotesize{Robust standard errors in parentheses}}\\
+## \multicolumn{5}{l}{\footnotesize{$^*$ indicates significance at $p< 0.05 $}} 
+## \end{tabular} 
+##  \end{table}
+\end{verbatim}
+
+\end{document}

@@ -1,3 +1,5 @@
+
+```{r }
 # Load Libraries ----
 
 library(foreign)
@@ -425,3 +427,13 @@ table_logit<-apsrtable(model1glm, model2glm, model3glm , model4glm, se="both", s
 
 # Table 5 ----
 table_logit
+```
+
+
+
+---
+title: Code_replication.R
+author: Home
+date: '2023-04-16'
+
+---
