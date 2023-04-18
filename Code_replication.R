@@ -21,7 +21,6 @@ names(devDTA)
 
 # SUMMARY STATS ----
 
-
 ## Sample size including ST constituencies ----
 table(devDTA$AC_type_1976)
 
@@ -425,3 +424,195 @@ table_logit<-apsrtable(model1glm, model2glm, model3glm , model4glm, se="both", s
 
 # Table 5 ----
 table_logit
+
+# Feasible Robustness Check ----
+
+southern_states <- c("ANDHRA PRADESH","KARNATAKA","KERALA","Kerala","TAMIL NADU")
+
+library(dplyr)
+
+devDTA %>%
+  filter(State_name_2001 %in% southern_states) -> devDTA_south
+
+for (i in 1:2) {
+  
+  detach()
+  
+  matchdta<-devDTA_south[complete.cases(devDTA_south$SC_percent71_true, devDTA_south$State_no_2001_old, devDTA_south$AC_type_noST, devDTA_south$Plit71_SC, devDTA_south$Plit_SC),] 
+  
+  matchdta$SC_percent71_true<-as.numeric(as.character(matchdta$SC_percent71_true))
+  
+  detach()
+  attach(matchdta)
+  dim(matchdta)
+  names(matchdta)
+  Tr<-ifelse(AC_type_noST=="SC", 1, 0)
+  
+  X<-as.data.frame(cbind(as.numeric(State_no_2001_old), as.numeric(DELIM_district_no), as.numeric(PC_no_1976), SC_percent71_true))
+  
+  library(Matching)
+  
+  if (i==1) {
+    Matched_norep<-Match(Y=Plit, Tr=Tr, X=X, estimand="ATT", exact=c(TRUE, TRUE, TRUE, FALSE), replace=FALSE)
+  } else if (i==2) {
+    Matched_norep<-Match(Y=Plit, Tr=Tr, X=X, estimand="ATT", exact=c(TRUE, TRUE, TRUE, FALSE), replace=FALSE, caliper=c(0,0,0,.5))
+  }
+  
+  summary(Matched_norep)
+  
+  ## Reporting balance ----
+  
+  if (i==1) {
+    bal_SC_norep1<-MatchBalance(Tr~SC_percent71_true, match.out=Matched_norep, nboots=1000, data=matchdta)
+  } else if (i==2) {
+    bal_SC_norep2<-MatchBalance(Tr~SC_percent71_true, match.out=Matched_norep, nboots=1000, data=matchdta)
+  }	
+  
+  bal.out_norep<-MatchBalance(Tr~Pop_tot1971+ P_ST71 +Plit71_nonSC+Plit71_SC+ P_W71_nonSC + P_W71_SC +P_al71_nonSC+P_al71_SC, match.out=Matched_norep, nboots=1000, data=matchdta)
+  
+  covariates<-as.data.frame(cbind(Pop_tot1971, P_ST71, Plit71_nonSC, Plit71_SC, P_W71_nonSC , P_W71_SC, P_al71_nonSC, P_al71_SC))
+  
+  names(covariates)<-c("Population size", "Percentage of STs", "Literacy rate (non-SCs)", "Literacy rate (SCs)", "Employment (non-SCs)", "Employment (SCs)", "Agricultural laborers (non-SCs)", "Agricultural laborers (SCs)")
+  
+  balanceTable <- function(covariates, bal.out){
+    
+    cat("\\begin{table}[ht] \n")
+    cat("\\caption{Difference in means for treated and control and Balance output from matches} \n")
+    cat(" \\begin{tabular}{lrrcrr} \\hline \\hline \n")
+    cat("Covariate	&\\multicolumn{2}{c}{Before matching}",
+        "&&\\multicolumn{2}{c}{After matching}", "\\", "\\", "\\cline{2-3} \\cline{5-6} \n",
+        sep="")
+    cat("& \\emph{t p}-value &KS \\emph{p}-value &&",
+        "\\emph{t p}-value &KS \\emph{p}-value", "\\", "\\", "\n",
+        sep="")
+    z <- sapply(1:dim(covariates)[2], function(x){
+      cat(names(covariates)[x], "&",
+          round(bal.out$BeforeMatching[[x]]$tt$p.value,2), "&",
+          ifelse(is.null(bal.out$BeforeMatching[[x]]$ks$ks.boot.pvalue) == 0,
+                 round(bal.out$BeforeMatching[[x]]$ks$ks.boot.pvalue,2), "---"), "&&",
+          round(bal.out$AfterMatching[[x]]$tt$p.value,2), "&",
+          ifelse(is.null(bal.out$AfterMatching[[x]]$ks$ks.boot.pvalue) == 0,
+                 round(bal.out$AfterMatching[[x]]$ks$ks.boot.pvalue,2), "---"), "\\", "\\", "\n",
+          sep="")
+    })
+    cat("\\end{tabular} \\end{table} \n")
+  }
+  
+  balanceTable(covariates, bal.out_norep)
+  
+  ##output
+  treatedDTA<-matchdta[Matched_norep$index.treated,]
+  controlDTA<-matchdta[Matched_norep$index.control,]
+  treatedDTA$index.match<-c(1:dim(treatedDTA)[1])
+  controlDTA$index.match<-c(1:dim(controlDTA)[1])
+  
+  if(i==1){
+    matched1<-rbind(treatedDTA, controlDTA)	
+  } else {
+    matched2<-rbind(treatedDTA, controlDTA)		
+  }
+}
+
+## Table 2 combines the balance output from the two matching models
+
+###############################################
+# BALANCE FIGURE ----
+###############################################
+
+detach(matchdta)
+
+## Balance on SC percentage ----
+
+t.test(devDTA_south$SC_percent71_true~devDTA_south$AC_type_noST)
+t.test(matched1$SC_percent71_true~matched1$AC_type_noST)
+t.test(matched2$SC_percent71_true~matched2$AC_type_noST)
+
+## Figure showing balance on percentage SC ----
+pdf("Figures/Fig_SC_percent71_balance_AEJ.pdf", width=7, height=3)
+par(mai = c(0.8, 0.3, 0.3, 0.1))
+par(mfrow=c(1,3))
+plot(density(devDTA_south$SC_percent71_true[devDTA_south$AC_type_noST=="SC" & complete.cases(devDTA_south$AC_type_noST)]), col="#FF1493", xlim=c(0,60), ylim=c(0, 0.1), main="Before matching", xlab="Percentage of SCs in constituency", las=1)
+lines(density(devDTA_south$SC_percent71_true[devDTA_south$AC_type_noST=="GEN" & complete.cases(devDTA_south$AC_type_noST)]), col="#00688B", lty=2)
+legend("topright", c(paste("General (N=", summary(devDTA_south$AC_type_noST)[1], ")", sep=""), paste("Reserved (N=", summary(devDTA_south$AC_type_noST)[2], ")", sep="")), lty=c(2,1), col=c("#00688B", "#FF1493"))
+
+plot(density(matched1$SC_percent71_true[matched1$AC_type_noST=="SC"]), col="#FF1493", xlim=c(0,60), ylim=c(0, 0.1), main="After matching", xlab="Percentage of SCs in constituency" , las=1)
+lines(density(matched1$SC_percent71_true[matched1$AC_type_noST=="GEN"]), col="#00688B", lty=2)
+legend("topright", c(paste("General (N=", summary(matched1$AC_type_noST)[1], ")", sep=""), paste("Reserved (N=", summary(matched1$AC_type_noST)[2], ")", sep="")), lty=c(2,1), col=c("#00688B", "#FF1493"))
+
+plot(density(matched2$SC_percent71_true[matched2$AC_type_noST=="SC"]), col="#FF1493", xlim=c(0,60), ylim=c(0, 0.1), main="After matching with caliper", xlab="Percentage of SCs in constituency", las=1)
+lines(density(matched2$SC_percent71_true[matched2$AC_type_noST=="GEN"]), col="#00688B", lty=2)
+legend("topright", c(paste("General (N=", summary(matched2$AC_type_noST)[1], ")", sep=""), paste("Reserved (N=", summary(matched2$AC_type_noST)[2], ")", sep="")), lty=c(2,1), col=c("#00688B", "#FF1493"))
+dev.off()
+
+###############################################
+## MATCHING ESTIMATES ----
+###############################################
+
+##Calculating matching estimates for Table 3 and Figure 4
+##Remove # from lines with alternative SE specification to check robustness to other SEs.
+
+mymatrix<-matrix(nrow=length(outcomeindex), ncol=12)
+
+for(i in 2:length(outcomeindex)){
+  
+  matched1_smaller<-matched1[complete.cases(matched1[outcomeindex[i]], matched1$AC_type_noST),]
+  matched2_smaller<-matched2[complete.cases(matched2[outcomeindex[i]], matched2$AC_type_noST),]
+  
+  mymodel<-lm(matched1_smaller[, outcomeindex[i]]~ matched1_smaller$AC_type_noST)
+  
+  #SEs clustered at state level
+  mySE<-clusterSE(mymodel, data= matched1_smaller, cluster="State_no_2001_old")
+  
+  mymatrix[i,1]<-round(mymodel$coef[2],2)
+  mymatrix[i,2]<-round(mymodel$coef[2]+qnorm(.975)*coeftest(mymodel, mySE)[2,2],2)
+  mymatrix[i,3]<-round(mymodel$coef[2]-qnorm(.975)*coeftest(mymodel, mySE)[2,2],2)
+  mymatrix[i,4]<-ifelse(coeftest(mymodel, mySE)[2,4]<0.01, "<0.01", 	round(coeftest(mymodel, mySE)[2,4],2))
+  
+  # Naive SEs from OLS
+  #mymatrix[i,c(2:3)]<-round(confint(mymodel)[2,],2)
+  #mymatrix[i,4]<-ifelse(coef(summary.lm(mymodel))[2,4]<0.01, "<0.01", round(coef(summary.lm(mymodel))[2,4],2))
+  
+  #And now with caliper
+  mymodel<-lm(matched2_smaller[, outcomeindex[i]]~ matched2_smaller$AC_type_noST)
+  
+  #SEs clustered at state level
+  mySE<-clusterSE(mymodel, data= matched2_smaller, cluster="State_no_2001_old")
+  
+  mymatrix[i,5]<-round(mymodel$coef[2],2)
+  mymatrix[i,6]<-round(mymodel$coef[2]+qnorm(.975)*coeftest(mymodel, mySE)[2,2],2)
+  mymatrix[i,7]<-round(mymodel$coef[2]-qnorm(.975)*coeftest(mymodel, mySE)[2,2],2)
+  mymatrix[i,8]<-ifelse(coeftest(mymodel, mySE)[2,4]<0.01, "<0.01", 	round(coeftest(mymodel, mySE)[2,4],2))
+  
+  # Naive SEs from OLS
+  #mymatrix[i,c(6:7)]<-round(confint(mymodel)[2,],2)
+  #mymatrix[i,8]<-ifelse(coef(summary.lm(mymodel))[2,4]<0.01, "<0.01", round(coef(summary.lm(mymodel))[2,4],2))
+  
+  #And now with bias adjust
+  
+  SCpop<-matched2_smaller$SC_pop71_true
+  mymodel<-lm(matched2_smaller[, outcomeindex[i]]~ matched2_smaller$AC_type_noST+ SCpop)
+  
+  #SEs clustered at state level
+  mySE<-clusterSE(mymodel, data= matched2_smaller, cluster="State_no_2001_old")
+  
+  mymatrix[i,9]<-round(mymodel$coef[2],2)
+  mymatrix[i,10]<-round(mymodel$coef[2]+qnorm(.975)*coeftest(mymodel, mySE)[2,2],2)
+  mymatrix[i,11]<-round(mymodel$coef[2]-qnorm(.975)*coeftest(mymodel, mySE)[2,2],2)
+  mymatrix[i,12]<-ifelse(coeftest(mymodel, mySE)[2,4]<0.01, "<0.01", 	round(coeftest(mymodel, mySE)[2,4],2))
+  
+  # Naive SEs from OLS
+  #mymatrix[i,c(10:11)]<-round(confint(mymodel)[2,],2)
+  #mymatrix[i,12]<-ifelse(coef(summary.lm(mymodel))[2,4]<0.01, "<0.01", round(coef(summary.lm(mymodel))[2,4],2))
+}	
+
+row.names(mymatrix)<-names(devDTA_south[outcomeindex])
+colnames(mymatrix)<-c("Difference", "Conf.int min", "Conf.int max", "P-value", "Difference", "Conf.int min", "Conf.int max", "P-value", "Difference", "Conf.int min", "Conf.int max", "P-value")
+
+row.names(mymatrix)<-c("Percentage SCs", "Literacy rate ", "Employment rate ", "Agricultural laborers", "Electricity in village", "School in village ","Medical facility in village","Comm. channel in village",
+                       "Literacy gap", "Employment gap", "Agricultural laborers gap",   "Electricity in village gap", "School in village gap","Medical facility in village gap","Comm. channel in village gap")
+
+figurematrix<-mymatrix[-1,-c(1:4)]
+articlematrix2<-mymatrix[-1,c(1,4,NA, 5,8,NA, 9,12)]
+
+library(xtable)
+xtable(articlematrix2)
